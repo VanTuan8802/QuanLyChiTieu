@@ -1,0 +1,6 @@
+framework module Pods_QuanLyChiTieu {
+  umbrella header "Pods-QuanLyChiTieu-umbrella.h"
+
+  export *
+  module * { export * }
+}
