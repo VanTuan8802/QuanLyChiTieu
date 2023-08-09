@@ -9,24 +9,86 @@
 /* Begin PBXBuildFile section */
 		0E937FE72A812CD90015DA19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FE62A812CD90015DA19 /* AppDelegate.swift */; };
 		0E937FE92A812CD90015DA19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FE82A812CD90015DA19 /* SceneDelegate.swift */; };
-		0E937FEB2A812CD90015DA19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FEA2A812CD90015DA19 /* ViewController.swift */; };
 		0E937FEE2A812CD90015DA19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E937FEC2A812CD90015DA19 /* Main.storyboard */; };
-		0E937FF02A812CDA0015DA19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E937FEF2A812CDA0015DA19 /* Assets.xcassets */; };
 		0E937FF32A812CDA0015DA19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E937FF12A812CDA0015DA19 /* LaunchScreen.storyboard */; };
 		0E937FFB2A812DDF0015DA19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E937FFA2A812DDF0015DA19 /* GoogleService-Info.plist */; };
-		50913858E90865C4DF828C5F /* Pods_QuanLyChiTieu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9453715F81AFF7521597847D /* Pods_QuanLyChiTieu.framework */; };
+		0E9380012A8130D20015DA19 /* TutorialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FFF2A8130D20015DA19 /* TutorialCollectionViewCell.swift */; };
+		0E9380022A8130D20015DA19 /* TutorialCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9380002A8130D20015DA19 /* TutorialCollectionViewCell.xib */; };
+		0E9380042A81BF1C0015DA19 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380032A81BF1C0015DA19 /* TutorialViewController.swift */; };
+		0E93800D2A81C0B60015DA19 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93800C2A81C0B60015DA19 /* LoginViewController.swift */; };
+		0E93800F2A81C0CA0015DA19 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93800E2A81C0CA0015DA19 /* RegisterViewController.swift */; };
+		0E9380132A81E6820015DA19 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380122A81E6820015DA19 /* TabbarViewController.swift */; };
+		0E9380152A823D6F0015DA19 /* CustomStyleTabBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380142A823D6F0015DA19 /* CustomStyleTabBarContentView.swift */; };
+		0E9380172A823D7D0015DA19 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380162A823D7D0015DA19 /* AppNavigationController.swift */; };
+		0E93802B2A8283BB0015DA19 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93802A2A8283BB0015DA19 /* HomeViewController.swift */; };
+		0E93802D2A8283C40015DA19 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93802C2A8283C40015DA19 /* IncomeViewController.swift */; };
+		0E93802F2A8283D00015DA19 /* SpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93802E2A8283D00015DA19 /* SpendingViewController.swift */; };
+		0E9380312A8283DC0015DA19 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380302A8283DC0015DA19 /* AccountViewController.swift */; };
+		0E9380322A8286920015DA19 /* Pods_QuanLyChiTieu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9453715F81AFF7521597847D /* Pods_QuanLyChiTieu.framework */; };
+		0E9380332A8286920015DA19 /* Pods_QuanLyChiTieu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9453715F81AFF7521597847D /* Pods_QuanLyChiTieu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0E9380382A8383E60015DA19 /* ManageAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380372A8383E60015DA19 /* ManageAccountViewController.swift */; };
+		0E93803A2A8383F00015DA19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380392A8383F00015DA19 /* SettingViewController.swift */; };
+		0E93803C2A8383FF0015DA19 /* ProduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93803B2A8383FF0015DA19 /* ProduceViewController.swift */; };
+		0E93803E2A8396090015DA19 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93803D2A8396090015DA19 /* ChangePasswordViewController.swift */; };
+		0E9380402A83980C0015DA19 /* LastIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93803F2A83980C0015DA19 /* LastIncomeViewController.swift */; };
+		0E9380422A8398220015DA19 /* IncomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */; };
+		0E9380442A8398390015DA19 /* LastIncomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380432A8398390015DA19 /* LastIncomeInfoViewController.swift */; };
+		0E9380462A8398540015DA19 /* LastSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380452A8398540015DA19 /* LastSpendingViewController.swift */; };
+		0E9380482A8398650015DA19 /* SpendingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */; };
+		0E93804A2A83987E0015DA19 /* LastSpendingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */; };
+		0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E93804B2A83D9F50015DA19 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0E9380212A82786E0015DA19 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0E9380332A8286920015DA19 /* Pods_QuanLyChiTieu.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E937FE32A812CD90015DA19 /* QuanLyChiTieu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyChiTieu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E937FE62A812CD90015DA19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E937FE82A812CD90015DA19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0E937FEA2A812CD90015DA19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E937FED2A812CD90015DA19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0E937FEF2A812CDA0015DA19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E937FF22A812CDA0015DA19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E937FF42A812CDA0015DA19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E937FFA2A812DDF0015DA19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E937FFF2A8130D20015DA19 /* TutorialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E9380002A8130D20015DA19 /* TutorialCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialCollectionViewCell.xib; sourceTree = "<group>"; };
+		0E9380032A81BF1C0015DA19 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		0E93800C2A81C0B60015DA19 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0E93800E2A81C0CA0015DA19 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0E9380122A81E6820015DA19 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		0E9380142A823D6F0015DA19 /* CustomStyleTabBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStyleTabBarContentView.swift; sourceTree = "<group>"; };
+		0E9380162A823D7D0015DA19 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
+		0E93801D2A8257540015DA19 /* QuanLyChiTieuRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuanLyChiTieuRelease.entitlements; sourceTree = "<group>"; };
+		0E93801E2A82786D0015DA19 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E9380222A8282700015DA19 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E9380252A82827D0015DA19 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E93802A2A8283BB0015DA19 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0E93802C2A8283C40015DA19 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
+		0E93802E2A8283D00015DA19 /* SpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingViewController.swift; sourceTree = "<group>"; };
+		0E9380302A8283DC0015DA19 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		0E9380342A82874D0015DA19 /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E9380372A8383E60015DA19 /* ManageAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageAccountViewController.swift; sourceTree = "<group>"; };
+		0E9380392A8383F00015DA19 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		0E93803B2A8383FF0015DA19 /* ProduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduceViewController.swift; sourceTree = "<group>"; };
+		0E93803D2A8396090015DA19 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		0E93803F2A83980C0015DA19 /* LastIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastIncomeViewController.swift; sourceTree = "<group>"; };
+		0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeInfoViewController.swift; sourceTree = "<group>"; };
+		0E9380432A8398390015DA19 /* LastIncomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastIncomeInfoViewController.swift; sourceTree = "<group>"; };
+		0E9380452A8398540015DA19 /* LastSpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSpendingViewController.swift; sourceTree = "<group>"; };
+		0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfoViewController.swift; sourceTree = "<group>"; };
+		0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSpendingInfoViewController.swift; sourceTree = "<group>"; };
+		0E93804B2A83D9F50015DA19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FEFE2E89147EE007EA49486 /* Pods-QuanLyChiTieu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanLyChiTieu.debug.xcconfig"; path = "Target Support Files/Pods-QuanLyChiTieu/Pods-QuanLyChiTieu.debug.xcconfig"; sourceTree = "<group>"; };
 		686F5363FA77E0A6E9E8307C /* Pods-QuanLyChiTieu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanLyChiTieu.release.xcconfig"; path = "Target Support Files/Pods-QuanLyChiTieu/Pods-QuanLyChiTieu.release.xcconfig"; sourceTree = "<group>"; };
 		9453715F81AFF7521597847D /* Pods_QuanLyChiTieu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuanLyChiTieu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50913858E90865C4DF828C5F /* Pods_QuanLyChiTieu.framework in Frameworks */,
+				0E9380322A8286920015DA19 /* Pods_QuanLyChiTieu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,21 +127,135 @@
 		0E937FE52A812CD90015DA19 /* QuanLyChiTieu */ = {
 			isa = PBXGroup;
 			children = (
+				0E93801D2A8257540015DA19 /* QuanLyChiTieuRelease.entitlements */,
+				0E9380102A81C0D60015DA19 /* Model */,
+				0E937FFC2A812FDD0015DA19 /* Screen */,
 				0E937FE62A812CD90015DA19 /* AppDelegate.swift */,
 				0E937FE82A812CD90015DA19 /* SceneDelegate.swift */,
-				0E937FEA2A812CD90015DA19 /* ViewController.swift */,
 				0E937FEC2A812CD90015DA19 /* Main.storyboard */,
-				0E937FEF2A812CDA0015DA19 /* Assets.xcassets */,
 				0E937FF12A812CDA0015DA19 /* LaunchScreen.storyboard */,
+				0E93804B2A83D9F50015DA19 /* Assets.xcassets */,
 				0E937FF42A812CDA0015DA19 /* Info.plist */,
 				0E937FFA2A812DDF0015DA19 /* GoogleService-Info.plist */,
 			);
 			path = QuanLyChiTieu;
 			sourceTree = "<group>";
 		};
+		0E937FFC2A812FDD0015DA19 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				0E937FFD2A8130290015DA19 /* Tutorial */,
+				0E9380052A81BF230015DA19 /* Login */,
+				0E9380062A81BF420015DA19 /* Register */,
+				0E9380072A81BF520015DA19 /* Tabbar */,
+				0E9380082A81BF640015DA19 /* Home */,
+				0E9380092A81BF6E0015DA19 /* Income */,
+				0E93800A2A81BF7A0015DA19 /* Spending */,
+				0E93800B2A81BFBB0015DA19 /* Acount */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		0E937FFD2A8130290015DA19 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				0E937FFE2A8130AB0015DA19 /* TutorialCell */,
+				0E9380032A81BF1C0015DA19 /* TutorialViewController.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		0E937FFE2A8130AB0015DA19 /* TutorialCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E937FFF2A8130D20015DA19 /* TutorialCollectionViewCell.swift */,
+				0E9380002A8130D20015DA19 /* TutorialCollectionViewCell.xib */,
+			);
+			path = TutorialCell;
+			sourceTree = "<group>";
+		};
+		0E9380052A81BF230015DA19 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0E93800C2A81C0B60015DA19 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		0E9380062A81BF420015DA19 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0E93800E2A81C0CA0015DA19 /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		0E9380072A81BF520015DA19 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				0E9380122A81E6820015DA19 /* TabbarViewController.swift */,
+				0E9380142A823D6F0015DA19 /* CustomStyleTabBarContentView.swift */,
+				0E9380162A823D7D0015DA19 /* AppNavigationController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		0E9380082A81BF640015DA19 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0E93802A2A8283BB0015DA19 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0E9380092A81BF6E0015DA19 /* Income */ = {
+			isa = PBXGroup;
+			children = (
+				0E93802C2A8283C40015DA19 /* IncomeViewController.swift */,
+				0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */,
+				0E93803F2A83980C0015DA19 /* LastIncomeViewController.swift */,
+				0E9380432A8398390015DA19 /* LastIncomeInfoViewController.swift */,
+			);
+			name = Income;
+			sourceTree = "<group>";
+		};
+		0E93800A2A81BF7A0015DA19 /* Spending */ = {
+			isa = PBXGroup;
+			children = (
+				0E93802E2A8283D00015DA19 /* SpendingViewController.swift */,
+				0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */,
+				0E9380452A8398540015DA19 /* LastSpendingViewController.swift */,
+				0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */,
+			);
+			path = Spending;
+			sourceTree = "<group>";
+		};
+		0E93800B2A81BFBB0015DA19 /* Acount */ = {
+			isa = PBXGroup;
+			children = (
+				0E9380302A8283DC0015DA19 /* AccountViewController.swift */,
+				0E9380372A8383E60015DA19 /* ManageAccountViewController.swift */,
+				0E9380392A8383F00015DA19 /* SettingViewController.swift */,
+				0E93803B2A8383FF0015DA19 /* ProduceViewController.swift */,
+				0E93803D2A8396090015DA19 /* ChangePasswordViewController.swift */,
+			);
+			path = Acount;
+			sourceTree = "<group>";
+		};
+		0E9380102A81C0D60015DA19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7A3D6197D8B68E97B359A06F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E9380342A82874D0015DA19 /* FirebaseAuth.framework */,
+				0E9380252A82827D0015DA19 /* FirebaseAuth.framework */,
+				0E9380222A8282700015DA19 /* FirebaseAuth.framework */,
+				0E93801E2A82786D0015DA19 /* FirebaseAuth.framework */,
 				9453715F81AFF7521597847D /* Pods_QuanLyChiTieu.framework */,
 			);
 			name = Frameworks;
@@ -106,6 +282,7 @@
 				0E937FE02A812CD90015DA19 /* Frameworks */,
 				0E937FE12A812CD90015DA19 /* Resources */,
 				FCDEA7DD5A76621300B04842 /* [CP] Embed Pods Frameworks */,
+				0E9380212A82786E0015DA19 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,8 +333,9 @@
 			files = (
 				0E937FF32A812CDA0015DA19 /* LaunchScreen.storyboard in Resources */,
 				0E937FFB2A812DDF0015DA19 /* GoogleService-Info.plist in Resources */,
-				0E937FF02A812CDA0015DA19 /* Assets.xcassets in Resources */,
 				0E937FEE2A812CD90015DA19 /* Main.storyboard in Resources */,
+				0E9380022A8130D20015DA19 /* TutorialCollectionViewCell.xib in Resources */,
+				0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,9 +388,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E937FEB2A812CD90015DA19 /* ViewController.swift in Sources */,
+				0E93802D2A8283C40015DA19 /* IncomeViewController.swift in Sources */,
+				0E9380132A81E6820015DA19 /* TabbarViewController.swift in Sources */,
+				0E9380312A8283DC0015DA19 /* AccountViewController.swift in Sources */,
+				0E9380442A8398390015DA19 /* LastIncomeInfoViewController.swift in Sources */,
+				0E9380382A8383E60015DA19 /* ManageAccountViewController.swift in Sources */,
+				0E93800D2A81C0B60015DA19 /* LoginViewController.swift in Sources */,
+				0E9380462A8398540015DA19 /* LastSpendingViewController.swift in Sources */,
+				0E9380402A83980C0015DA19 /* LastIncomeViewController.swift in Sources */,
+				0E93803A2A8383F00015DA19 /* SettingViewController.swift in Sources */,
+				0E9380012A8130D20015DA19 /* TutorialCollectionViewCell.swift in Sources */,
+				0E9380482A8398650015DA19 /* SpendingInfoViewController.swift in Sources */,
+				0E93803C2A8383FF0015DA19 /* ProduceViewController.swift in Sources */,
+				0E93800F2A81C0CA0015DA19 /* RegisterViewController.swift in Sources */,
+				0E9380152A823D6F0015DA19 /* CustomStyleTabBarContentView.swift in Sources */,
+				0E93802B2A8283BB0015DA19 /* HomeViewController.swift in Sources */,
+				0E9380042A81BF1C0015DA19 /* TutorialViewController.swift in Sources */,
+				0E93803E2A8396090015DA19 /* ChangePasswordViewController.swift in Sources */,
 				0E937FE72A812CD90015DA19 /* AppDelegate.swift in Sources */,
 				0E937FE92A812CD90015DA19 /* SceneDelegate.swift in Sources */,
+				0E93802F2A8283D00015DA19 /* SpendingViewController.swift in Sources */,
+				0E93804A2A83987E0015DA19 /* LastSpendingInfoViewController.swift in Sources */,
+				0E9380172A823D7D0015DA19 /* AppNavigationController.swift in Sources */,
+				0E9380422A8398220015DA19 /* IncomeInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +566,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuanLyChiTieu/QuanLyChiTieuRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P82L6D3NV5;
@@ -397,6 +597,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
