@@ -25,10 +25,10 @@ class TabbarViewController: UITabBarController {
     }
     
     private func loadTabBarView() {
-        let home = createViewController(withIdentifier: "HomeViewController", title: "Home", image: "home")
-        let income = createViewController(withIdentifier: "IncomeViewController", title: "Thu nhập", image: "message")
-        let spending = createViewController(withIdentifier: "SpendingViewController", title: "Chi tiêu", image: "user")
-        let account = createViewController(withIdentifier: "AccountViewController", title: "Tài khoản", image: "home")
+        let home = createViewController(withIdentifier: "HomeViewController", title: "Home", image: "house")
+        let income = createViewController(withIdentifier: "IncomeViewController", title: "Thu nhập", image: "increase")
+        let spending = createViewController(withIdentifier: "SpendingViewController", title: "Chi tiêu", image: "decrease")
+        let account = createViewController(withIdentifier: "AccountViewController", title: "Tài khoản", image: "user")
         
         setViewControllers([home, income,spending, account], animated: true)
     }

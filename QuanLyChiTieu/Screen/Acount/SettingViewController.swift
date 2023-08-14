@@ -9,21 +9,25 @@ import UIKit
 
 class SettingViewController: UIViewController {
 
+    @IBOutlet weak var backBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController?.navigationItem.hidesBackButton = false
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.navigationItem.hidesBackButton = false
     }
-    */
 
+    @IBAction func backAction(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewProfile = storyboard.instantiateViewController(withIdentifier: "AccountViewController")
+        let nav = UINavigationController(rootViewController: viewProfile)
+        nav.setNavigationBarHidden(true, animated: true)
+        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = nav
+        (UIApplication.shared.delegate as? AppDelegate)?.window?.makeKeyAndVisible()
+    }
 }

@@ -11,12 +11,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        
+        (UIApplication.shared.delegate as? AppDelegate)?.window = window
+        
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            // Người dùng đã đăng nhập
+            // Chuyển hướng đến màn hình chính (Main Screen)
+            routeToTabbarController()
+            
+        } else {
+            // Người dùng chưa đăng nhập
+            routeToLogin()
+            
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -47,6 +61,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    private func routeToLogin(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        let nav = UINavigationController(rootViewController: loginVC)
+        nav.setNavigationBarHidden(true, animated: true)
+        guard let window = (UIApplication.shared.delegate as? AppDelegate)?.window else{return}
+        window.rootViewController = nav
+        window.makeKeyAndVisible()
+        
+    }
+    
+    //Chuyển đến màn hình main
+    private func routeToTabbarController(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let MainVC = storyboard.instantiateViewController(withIdentifier: "TabbarViewController")
+        guard let window = (UIApplication.shared.delegate as? AppDelegate)?.window else{
+            return
+        }
+        window.rootViewController = MainVC
+        window.makeKeyAndVisible()
+        
+    }
 }
 

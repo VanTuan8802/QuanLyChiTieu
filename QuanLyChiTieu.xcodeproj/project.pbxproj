@@ -37,6 +37,7 @@
 		0E9380482A8398650015DA19 /* SpendingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */; };
 		0E93804A2A83987E0015DA19 /* LastSpendingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */; };
 		0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E93804B2A83D9F50015DA19 /* Assets.xcassets */; };
+		0E93804E2A88ACF60015DA19 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93804D2A88ACF60015DA19 /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +90,7 @@
 		0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfoViewController.swift; sourceTree = "<group>"; };
 		0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSpendingInfoViewController.swift; sourceTree = "<group>"; };
 		0E93804B2A83D9F50015DA19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E93804D2A88ACF60015DA19 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		5FEFE2E89147EE007EA49486 /* Pods-QuanLyChiTieu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanLyChiTieu.debug.xcconfig"; path = "Target Support Files/Pods-QuanLyChiTieu/Pods-QuanLyChiTieu.debug.xcconfig"; sourceTree = "<group>"; };
 		686F5363FA77E0A6E9E8307C /* Pods-QuanLyChiTieu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanLyChiTieu.release.xcconfig"; path = "Target Support Files/Pods-QuanLyChiTieu/Pods-QuanLyChiTieu.release.xcconfig"; sourceTree = "<group>"; };
 		9453715F81AFF7521597847D /* Pods_QuanLyChiTieu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuanLyChiTieu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +247,7 @@
 		0E9380102A81C0D60015DA19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E93804D2A88ACF60015DA19 /* Account.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				0E9380312A8283DC0015DA19 /* AccountViewController.swift in Sources */,
 				0E9380442A8398390015DA19 /* LastIncomeInfoViewController.swift in Sources */,
 				0E9380382A8383E60015DA19 /* ManageAccountViewController.swift in Sources */,
+				0E93804E2A88ACF60015DA19 /* Account.swift in Sources */,
 				0E93800D2A81C0B60015DA19 /* LoginViewController.swift in Sources */,
 				0E9380462A8398540015DA19 /* LastSpendingViewController.swift in Sources */,
 				0E9380402A83980C0015DA19 /* LastIncomeViewController.swift in Sources */,

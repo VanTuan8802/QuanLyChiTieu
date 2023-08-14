@@ -37,17 +37,34 @@ class RegisterViewController: UIViewController {
                 }))
                 self.present(alert, animated: true, completion: nil)
             }else{
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let tabbar = mainStoryboard.instantiateViewController(withIdentifier: "TabbarViewController") as! TabbarViewController
-                tabbar.modalPresentationStyle = .fullScreen
-                self.present(tabbar, animated: true)
-                UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                authResult?.user.sendEmailVerification(completion: { (error) in
+                    if (error != nil){
+                        let alert = UIAlertController(title: "Error", message:error?.localizedDescription ?? "Exception", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                            NSLog("The \"OK\" alert occured.")
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                    }else{
+                        let alert = UIAlertController(title: "Error", message:"Go to Email to verify link" , preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                            NSLog("The \"OK\" alert occured.")
+                        }))
+                        self.present(alert, animated: true, completion: nil)
+                        
+                        
+                    }
+                })
                 
             }
         }
     }
     @IBAction func loginAction(_ sender: Any) {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+        let nav = UINavigationController(rootViewController: login)
+        nav.setNavigationBarHidden(true, animated: true)
+        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = nav
+        (UIApplication.shared.delegate as? AppDelegate)?.window?.makeKeyAndVisible()
     }
     
 }

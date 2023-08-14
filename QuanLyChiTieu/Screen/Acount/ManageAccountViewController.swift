@@ -6,24 +6,70 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class ManageAccountViewController: UIViewController {
-
+    
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var changePasswod: UIView!
+    @IBOutlet weak var logOutBtn: UIButton!
+    @IBOutlet weak var deleteAccountBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var changeNameBtn: UIButton!
+    @IBOutlet weak var nameTxt: UITextField!
+    @IBOutlet weak var changeImageBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func logOutAction(_ sender: Any) {
+        do {
+            try FirebaseAuth.Auth.auth().signOut()
+            
+            // Xoá thông tin đăng nhập lưu trữ bằng UserDefaults
+            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+            UserDefaults.standard.removeObject(forKey: "email")
+            
+            // Điều hướng người dùng đến màn hình đăng nhập
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                appDelegate.window?.rootViewController = loginVC
+            }
+        }catch{
+            self.showAlert(title: "Error", message: "Logout failure")
+        }
     }
-    */
-
+    
+    @IBAction func changeImageAction(_ sender: Any) {
+        
+    }
+    
+    @IBAction func changeNameTxt(_ sender: Any) {
+        
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewProfile = storyboard.instantiateViewController(withIdentifier: "AccountViewController")
+//        let nav = UINavigationController(rootViewController: viewProfile)
+        navigationController?.popViewController(animated: true)
+        
+    }
+    
+    @IBAction func deleteAccountAction(_ sender: Any) {
+        if let account = Auth.auth().currentUser {
+            account.delete { error in
+                if let error = error {
+                    self.showAlert(title: "Error", message: error.localizedDescription)
+                } else {
+                    self.showAlert(title: "Success", message: "Account delete succesfull")
+                }
+            }
+        }
+    }
+    
 }

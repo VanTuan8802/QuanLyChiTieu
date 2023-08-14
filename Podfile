@@ -8,6 +8,7 @@ target 'QuanLyChiTieu' do
   pod 'FirebaseDatabase'
   pod 'Firebase/Storage'
   pod "ESTabBarController-swift"
+  pod 'Kingfisher'
   # Pods for QuanLyChiTieu
   
 end

@@ -46,6 +46,7 @@ PODS:
   - GoogleUtilities/Reachability (7.11.5):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (3.1.1)
+  - Kingfisher (7.9.0)
   - leveldb-library (1.22.2)
   - PromisesObjC (2.3.1)
 
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseAuth
   - FirebaseDatabase
+  - Kingfisher
 
 SPEC REPOS:
   trunk:
@@ -69,6 +71,7 @@ SPEC REPOS:
     - FirebaseStorage
     - GoogleUtilities
     - GTMSessionFetcher
+    - Kingfisher
     - leveldb-library
     - PromisesObjC
 
@@ -85,9 +88,10 @@ SPEC CHECKSUMS:
   FirebaseStorage: f2d1a84d78a7226d97bc76d85cf1092cab5f2b7d
   GoogleUtilities: 13e2c67ede716b8741c7989e26893d151b2b2084
   GTMSessionFetcher: e8647203b65cee28c5f73d0f473d096653945e72
+  Kingfisher: 59f908b6d2f403b0a3e539debb0eec05cb27002c
   leveldb-library: f03246171cce0484482ec291f88b6d563699ee06
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
 
-PODFILE CHECKSUM: 68c35671a4d2a20035b1ec5b691b1368b828aa91
+PODFILE CHECKSUM: e28f33e40233821478a9c503f187b195418e3101
 
 COCOAPODS: 1.12.1
