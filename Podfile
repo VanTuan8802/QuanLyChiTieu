@@ -9,6 +9,8 @@ target 'QuanLyChiTieu' do
   pod 'Firebase/Storage'
   pod "ESTabBarController-swift"
   pod 'Kingfisher'
+  pod 'GoogleSignIn'
+  pod 'GoogleSignInSwiftSupport'
   # Pods for QuanLyChiTieu
   
 end

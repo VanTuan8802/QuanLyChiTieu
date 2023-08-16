@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class ManageAccountViewController: UIViewController {
+class ManageAccountViewController: UIViewController, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var changePasswod: UIView!
@@ -21,8 +21,15 @@ class ManageAccountViewController: UIViewController {
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var changeImageBtn: UIButton!
     
+    private var userImagePicker: UIImagePickerController = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tapGestureChangePassword = UITapGestureRecognizer(target: self, action: #selector(goToChangePassword))
+        
+        tapGestureChangePassword.delegate = self
+        
+        changePasswod.addGestureRecognizer(tapGestureChangePassword)
     }
     
     @IBAction func logOutAction(_ sender: Any) {
@@ -45,6 +52,9 @@ class ManageAccountViewController: UIViewController {
     }
     
     @IBAction func changeImageAction(_ sender: Any) {
+        userImagePicker.delegate = self
+        userImagePicker.sourceType = .photoLibrary
+        userImagePicker.allowsEditing = false
         
     }
     
@@ -53,11 +63,7 @@ class ManageAccountViewController: UIViewController {
     }
     
     @IBAction func backAction(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewProfile = storyboard.instantiateViewController(withIdentifier: "AccountViewController")
-//        let nav = UINavigationController(rootViewController: viewProfile)
         navigationController?.popViewController(animated: true)
-        
     }
     
     @IBAction func deleteAccountAction(_ sender: Any) {
@@ -72,4 +78,11 @@ class ManageAccountViewController: UIViewController {
         }
     }
     
+    @objc func goToChangePassword(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let changePassword = storyboard.instantiateViewController(withIdentifier: "ChangePasswordViewController")
+        navigationController?.pushViewController(changePassword, animated: true)
+    }
 }
+
+

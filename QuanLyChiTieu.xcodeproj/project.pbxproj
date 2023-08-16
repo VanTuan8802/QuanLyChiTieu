@@ -38,6 +38,17 @@
 		0E93804A2A83987E0015DA19 /* LastSpendingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */; };
 		0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E93804B2A83D9F50015DA19 /* Assets.xcassets */; };
 		0E93804E2A88ACF60015DA19 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93804D2A88ACF60015DA19 /* Account.swift */; };
+		0E9380502A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E93804F2A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist */; };
+		0E9380552A8CCF050015DA19 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380532A8CCF050015DA19 /* IncomeTableViewCell.swift */; };
+		0E9380562A8CCF050015DA19 /* IncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9380542A8CCF050015DA19 /* IncomeTableViewCell.xib */; };
+		0E93805D2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93805B2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift */; };
+		0E93805E2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E93805C2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib */; };
+		0E9380612A8CD2060015DA19 /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93805F2A8CD2060015DA19 /* SpendingTableViewCell.swift */; };
+		0E9380622A8CD2060015DA19 /* SpendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9380602A8CD2060015DA19 /* SpendingTableViewCell.xib */; };
+		0E9380652A8CD2180015DA19 /* SpendingInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380632A8CD2180015DA19 /* SpendingInfoTableViewCell.swift */; };
+		0E9380662A8CD2180015DA19 /* SpendingInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9380642A8CD2180015DA19 /* SpendingInfoTableViewCell.xib */; };
+		0E9380682A8CE8AA0015DA19 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380672A8CE8AA0015DA19 /* Income.swift */; };
+		0E93806A2A8CFA8E0015DA19 /* Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380692A8CFA8E0015DA19 /* Spending.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,6 +102,17 @@
 		0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSpendingInfoViewController.swift; sourceTree = "<group>"; };
 		0E93804B2A83D9F50015DA19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E93804D2A88ACF60015DA19 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		0E93804F2A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
+		0E9380532A8CCF050015DA19 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
+		0E9380542A8CCF050015DA19 /* IncomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeTableViewCell.xib; sourceTree = "<group>"; };
+		0E93805B2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeInfoTableViewCell.swift; sourceTree = "<group>"; };
+		0E93805C2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeInfoTableViewCell.xib; sourceTree = "<group>"; };
+		0E93805F2A8CD2060015DA19 /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
+		0E9380602A8CD2060015DA19 /* SpendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingTableViewCell.xib; sourceTree = "<group>"; };
+		0E9380632A8CD2180015DA19 /* SpendingInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfoTableViewCell.swift; sourceTree = "<group>"; };
+		0E9380642A8CD2180015DA19 /* SpendingInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingInfoTableViewCell.xib; sourceTree = "<group>"; };
+		0E9380672A8CE8AA0015DA19 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		0E9380692A8CFA8E0015DA19 /* Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending.swift; sourceTree = "<group>"; };
 		5FEFE2E89147EE007EA49486 /* Pods-QuanLyChiTieu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanLyChiTieu.debug.xcconfig"; path = "Target Support Files/Pods-QuanLyChiTieu/Pods-QuanLyChiTieu.debug.xcconfig"; sourceTree = "<group>"; };
 		686F5363FA77E0A6E9E8307C /* Pods-QuanLyChiTieu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanLyChiTieu.release.xcconfig"; path = "Target Support Files/Pods-QuanLyChiTieu/Pods-QuanLyChiTieu.release.xcconfig"; sourceTree = "<group>"; };
 		9453715F81AFF7521597847D /* Pods_QuanLyChiTieu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuanLyChiTieu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +160,7 @@
 				0E937FF12A812CDA0015DA19 /* LaunchScreen.storyboard */,
 				0E93804B2A83D9F50015DA19 /* Assets.xcassets */,
 				0E937FF42A812CDA0015DA19 /* Info.plist */,
+				0E93804F2A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist */,
 				0E937FFA2A812DDF0015DA19 /* GoogleService-Info.plist */,
 			);
 			path = QuanLyChiTieu;
@@ -213,9 +236,11 @@
 		0E9380092A81BF6E0015DA19 /* Income */ = {
 			isa = PBXGroup;
 			children = (
+				0E9380512A8CBC010015DA19 /* IncomeCell */,
 				0E93802C2A8283C40015DA19 /* IncomeViewController.swift */,
-				0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */,
 				0E93803F2A83980C0015DA19 /* LastIncomeViewController.swift */,
+				0E9380522A8CBC0E0015DA19 /* IncomeInfoCell */,
+				0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */,
 				0E9380432A8398390015DA19 /* LastIncomeInfoViewController.swift */,
 			);
 			name = Income;
@@ -224,6 +249,8 @@
 		0E93800A2A81BF7A0015DA19 /* Spending */ = {
 			isa = PBXGroup;
 			children = (
+				0E9380582A8CCFDB0015DA19 /* SpendingInfoCell */,
+				0E9380572A8CCFCC0015DA19 /* SpendingCell */,
 				0E93802E2A8283D00015DA19 /* SpendingViewController.swift */,
 				0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */,
 				0E9380452A8398540015DA19 /* LastSpendingViewController.swift */,
@@ -248,8 +275,46 @@
 			isa = PBXGroup;
 			children = (
 				0E93804D2A88ACF60015DA19 /* Account.swift */,
+				0E9380672A8CE8AA0015DA19 /* Income.swift */,
+				0E9380692A8CFA8E0015DA19 /* Spending.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0E9380512A8CBC010015DA19 /* IncomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E9380532A8CCF050015DA19 /* IncomeTableViewCell.swift */,
+				0E9380542A8CCF050015DA19 /* IncomeTableViewCell.xib */,
+			);
+			name = IncomeCell;
+			sourceTree = "<group>";
+		};
+		0E9380522A8CBC0E0015DA19 /* IncomeInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E93805B2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift */,
+				0E93805C2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib */,
+			);
+			name = IncomeInfoCell;
+			sourceTree = "<group>";
+		};
+		0E9380572A8CCFCC0015DA19 /* SpendingCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E93805F2A8CD2060015DA19 /* SpendingTableViewCell.swift */,
+				0E9380602A8CD2060015DA19 /* SpendingTableViewCell.xib */,
+			);
+			path = SpendingCell;
+			sourceTree = "<group>";
+		};
+		0E9380582A8CCFDB0015DA19 /* SpendingInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E9380632A8CD2180015DA19 /* SpendingInfoTableViewCell.swift */,
+				0E9380642A8CD2180015DA19 /* SpendingInfoTableViewCell.xib */,
+			);
+			path = SpendingInfoCell;
 			sourceTree = "<group>";
 		};
 		7A3D6197D8B68E97B359A06F /* Frameworks */ = {
@@ -338,7 +403,12 @@
 				0E937FFB2A812DDF0015DA19 /* GoogleService-Info.plist in Resources */,
 				0E937FEE2A812CD90015DA19 /* Main.storyboard in Resources */,
 				0E9380022A8130D20015DA19 /* TutorialCollectionViewCell.xib in Resources */,
+				0E9380562A8CCF050015DA19 /* IncomeTableViewCell.xib in Resources */,
 				0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */,
+				0E93805E2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib in Resources */,
+				0E9380662A8CD2180015DA19 /* SpendingInfoTableViewCell.xib in Resources */,
+				0E9380622A8CD2060015DA19 /* SpendingTableViewCell.xib in Resources */,
+				0E9380502A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,14 +462,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E93802D2A8283C40015DA19 /* IncomeViewController.swift in Sources */,
+				0E9380652A8CD2180015DA19 /* SpendingInfoTableViewCell.swift in Sources */,
 				0E9380132A81E6820015DA19 /* TabbarViewController.swift in Sources */,
+				0E9380612A8CD2060015DA19 /* SpendingTableViewCell.swift in Sources */,
+				0E9380552A8CCF050015DA19 /* IncomeTableViewCell.swift in Sources */,
 				0E9380312A8283DC0015DA19 /* AccountViewController.swift in Sources */,
 				0E9380442A8398390015DA19 /* LastIncomeInfoViewController.swift in Sources */,
 				0E9380382A8383E60015DA19 /* ManageAccountViewController.swift in Sources */,
 				0E93804E2A88ACF60015DA19 /* Account.swift in Sources */,
+				0E93806A2A8CFA8E0015DA19 /* Spending.swift in Sources */,
 				0E93800D2A81C0B60015DA19 /* LoginViewController.swift in Sources */,
 				0E9380462A8398540015DA19 /* LastSpendingViewController.swift in Sources */,
 				0E9380402A83980C0015DA19 /* LastIncomeViewController.swift in Sources */,
+				0E93805D2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift in Sources */,
 				0E93803A2A8383F00015DA19 /* SettingViewController.swift in Sources */,
 				0E9380012A8130D20015DA19 /* TutorialCollectionViewCell.swift in Sources */,
 				0E9380482A8398650015DA19 /* SpendingInfoViewController.swift in Sources */,
@@ -409,6 +484,7 @@
 				0E93802B2A8283BB0015DA19 /* HomeViewController.swift in Sources */,
 				0E9380042A81BF1C0015DA19 /* TutorialViewController.swift in Sources */,
 				0E93803E2A8396090015DA19 /* ChangePasswordViewController.swift in Sources */,
+				0E9380682A8CE8AA0015DA19 /* Income.swift in Sources */,
 				0E937FE72A812CD90015DA19 /* AppDelegate.swift in Sources */,
 				0E937FE92A812CD90015DA19 /* SceneDelegate.swift in Sources */,
 				0E93802F2A8283D00015DA19 /* SpendingViewController.swift in Sources */,

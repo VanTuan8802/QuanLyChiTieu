@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
                 authResult?.user.reload(completion: { (error) in
                     if authResult?.user.isEmailVerified == true{
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+                        let vc = storyboard.instantiateViewController(withIdentifier: "TabbarViewController")
                         
                         let keyWindow = UIApplication.shared.connectedScenes
                             .filter({$0.activationState == .foregroundActive})
