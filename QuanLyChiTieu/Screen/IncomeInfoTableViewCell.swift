@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class IncomeInfoTableViewCell: UITableViewCell {
 
@@ -15,15 +16,28 @@ class IncomeInfoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+
     }
     
+    private func resetData() {
+        name.text = nil
+        date.text = nil
+        value.text = nil
+    }
     
-    
+    func bindData(incomeInfor : IncomeInfor){
+        name.text = incomeInfor.name
+
+        // Create Date Formatter
+        let dateFormatter = DateFormatter()
+        
+        date.text = incomeInfor.date
+        value.text = String(format:"%.2f", incomeInfor.value)
+    }
 }

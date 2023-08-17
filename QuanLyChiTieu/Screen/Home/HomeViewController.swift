@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
                     
                     UserDefaults.standard.set(name, forKey: "name")
                     UserDefaults.standard.set(userImageUrl, forKey: "image")
-                    print("Name is \(name)")
+                
                 }
             })
         }

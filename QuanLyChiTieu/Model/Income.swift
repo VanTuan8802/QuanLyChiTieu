@@ -9,14 +9,20 @@ import Foundation
 
 struct IncomeInfor{
     var name : String
-    var date : Date
+    var date : String
     var value : Float
 }
 
 struct Income{
     var name : String
     var sum : Float
-    var list : [IncomeInfor]
+    var list : [IncomeInfor]?
+    
+    init(name: String, sum: Float, list: [IncomeInfor]? = nil) {
+        self.name = name
+        self.sum = sum
+        self.list = list
+    }
 }
 
 

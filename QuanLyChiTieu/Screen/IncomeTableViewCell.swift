@@ -22,5 +22,14 @@ class IncomeTableViewCell: UITableViewCell {
 
         
     }
+
+    private func resetData() {
+        name.text = nil
+        value.text = nil
+    }
     
+    func bindData(income : Income){
+        name.text = income.name
+        value.text = String(format:"%.2f", income.sum)
+    }
 }

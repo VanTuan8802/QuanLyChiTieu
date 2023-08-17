@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class IncomeViewController: UIViewController {
 
@@ -13,10 +16,45 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var sumValue: UILabel!
     @IBOutlet weak var incomeTableView: UITableView!
     
+    var income : Income!
+    
+    private var incomes : [Income] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTableView()
+        
+        if let currentUser = Auth.auth().currentUser?.uid{
+            let incomeRef = Database.database().reference().child("income").child("nowIncome").child(currentUser)
+            incomeRef.observeSingleEvent(of: .value, with: { [self] snapshot in
+                print(snapshot)
+                if let incomeData = snapshot.value as? [String: Any] {
+                    //print(incomeData)
+//                    let name = data["name"] as? String ?? ""
+//                    let sumValue = data["value"] as? Float ?? 0
+//
+//                    incomes.append(Income(name: name, sum: sumValue))
+                   
+                }
+                self.incomeTableView.reloadData()
+            })
+            
+        }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+       
+    }
+    
+    private func setupTableView() {
+        incomeTableView.delegate = self
+        incomeTableView.dataSource = self
+        incomeTableView.register(UINib(nibName: "IncomeTableViewCell", bundle: nil), forCellReuseIdentifier: "IncomeTableViewCell")
     }
     
     @IBAction func addAction(_ sender: Any) {
@@ -40,4 +78,22 @@ class IncomeViewController: UIViewController {
            
         self.present(alertController, animated: true, completion: nil)
     }
+}
+
+extension IncomeViewController : UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return incomes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IncomeTableViewCell", for: indexPath) as! IncomeTableViewCell
+        let income = incomes[indexPath.row]
+        
+        cell.bindData(income: income)
+        return cell
+    }
+}
+
+extension IncomeViewController: UITableViewDelegate {
+    
 }
