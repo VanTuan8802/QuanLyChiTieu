@@ -30,11 +30,11 @@ class IncomeViewController: UIViewController {
             incomeRef.observeSingleEvent(of: .value, with: { [self] snapshot in
                 print(snapshot)
                 if let incomeData = snapshot.value as? [String: Any] {
-                    //print(incomeData)
-//                    let name = data["name"] as? String ?? ""
-//                    let sumValue = data["value"] as? Float ?? 0
-//
-//                    incomes.append(Income(name: name, sum: sumValue))
+                    print(incomeData)
+                    let name = incomeData["name"] as? String ?? ""
+                    let sumValue = incomeData["value"] as? Float ?? 0
+
+                    incomes.append(Income(name: name, sum: sumValue))
                    
                 }
                 self.incomeTableView.reloadData()

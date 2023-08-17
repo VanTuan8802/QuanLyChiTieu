@@ -92,35 +92,49 @@ class LoginViewController: UIViewController {
         
         if showPassword{
             passwordTxt.isSecureTextEntry = false
-            hidePassword.setImage(UIImage(named: "hidden"), for: .normal)
+            hidePassword.setImage(UIImage(named: "visible"), for: .normal)
         }else{
             passwordTxt.isSecureTextEntry = true
-            hidePassword.setImage(UIImage(named: "visible"), for: .normal)
+            hidePassword.setImage(UIImage(named: "hidden"), for: .normal)
         }
     }
     
+    @IBAction func showEmailValidate(_ sender: Any) {
+        emailValidate.isHidden = false
+        emailValidate.text = checkEmail(email: emailTxt.text!)
+        emailTxt.layer.cornerRadius = 15
+    }
+    
+    @IBAction func editEmailTxt(_ sender: Any) {
+        emailValidate.isHidden = true
+    }
+    
+    @IBAction func editPasswordTxt(_ sender: Any) {
+        passwordValidate.isHidden = true
+        
+    }
+    
+    @IBAction func showPasswordValidate(_ sender: Any) {
+        passwordValidate.isHidden = false
+        passwordValidate.text = checkPassword(password: passwordTxt.text!)
+        passwordValidate.layer.cornerRadius = 15
+    }
+    
+    @IBAction func rememberAction(_ sender: Any) {
+    }
     
     func setUI(){
         emailValidate.isHidden = true
         passwordValidate.isHidden = true
         
-        loginGoogleBtn.layer.cornerRadius = 20
-        loginGoogleBtn.layer.borderWidth = 1
-        loginGoogleBtn.layer.borderColor = UIColor.black.cgColor
-        loginAppleBtn.layer.masksToBounds = true
+        setUITextField(textField: emailTxt)
+        setUITextField(textField: passwordTxt)
         
-        loginFacebookBtn.layer.cornerRadius = 20
-        loginFacebookBtn.layer.borderWidth = 1
-        loginFacebookBtn.layer.borderColor = UIColor.black.cgColor
-        loginAppleBtn.layer.masksToBounds = true
+        setUIButtonLogin(button: loginGoogleBtn)
+        setUIButtonLogin(button: loginFacebookBtn)
+        setUIButtonLogin(button: loginAppleBtn)
         
-        loginAppleBtn.layer.cornerRadius = 20
-        loginAppleBtn.layer.borderWidth = 1
-        loginAppleBtn.layer.borderColor = UIColor.black.cgColor
-        loginAppleBtn.layer.masksToBounds = true
-        loginBtn.backgroundColor = UIColor(red: 0.51, green: 0.76, blue: 0.83, alpha: 1.00)
-        
-        loginBtn.layer.cornerRadius = 25
+        setUIButton(button: loginBtn)
     }
 }
 
@@ -134,6 +148,16 @@ extension UIViewController{
         present(alertController, animated: true, completion: nil)
     }
     
+    func checkEmail(email : String)->String{
+        if email.isEmpty == true{
+            return "Bạn chưa điền email"
+        }else if email.contains("@") == false || email.contains(".") == false{
+            return "Email bạn nhập chưa chính xác"
+        }else{
+            return ""
+        }
+    }
+    
     func checkPassword(password: String)->String{
         if password.isEmpty{
             return "Password is required"
@@ -144,5 +168,24 @@ extension UIViewController{
         }else{
             return ""
         }
+    }
+    
+    func setUIButton(button : UIButton){
+        button.backgroundColor = UIColor(red: 0.51, green: 0.76, blue: 0.83, alpha: 1.00)
+        button.layer.cornerRadius = 25
+        button.clipsToBounds = true
+    }
+    
+    func setUIButtonLogin(button : UIButton){
+        button.layer.cornerRadius = 20
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.layer.masksToBounds = true
+    }
+    
+    func setUITextField(textField : UITextField){
+        textField.layer.cornerRadius = 20
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.gray.cgColor
     }
 }

@@ -26,8 +26,14 @@
                             <constraint firstAttribute="width" constant="195" id="F9Y-0W-9UP"/>
                             <constraint firstAttribute="height" constant="50" id="s3w-jm-Jn5"/>
                         </constraints>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="Button">
+                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="26"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="handleBtnAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="H2e-Il-c4M"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -41,6 +47,10 @@
                 <constraint firstItem="T4O-sD-gn4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xaK-Jq-v39"/>
             </constraints>
             <size key="customSize" width="324" height="562"/>
+            <connections>
+                <outlet property="buttonTutorial" destination="T4O-sD-gn4" id="5N1-mR-m2F"/>
+                <outlet property="imageTutorial" destination="86K-Yq-hPk" id="b10-nj-gWZ"/>
+            </connections>
             <point key="canvasLocation" x="264.12213740458014" y="168.3098591549296"/>
         </collectionViewCell>
     </objects>
