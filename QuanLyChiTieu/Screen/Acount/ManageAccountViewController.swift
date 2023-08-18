@@ -22,6 +22,7 @@ class ManageAccountViewController: UIViewController, UIGestureRecognizerDelegate
     @IBOutlet weak var changeImageBtn: UIButton!
     
     private var userImagePicker: UIImagePickerController = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +31,8 @@ class ManageAccountViewController: UIViewController, UIGestureRecognizerDelegate
         tapGestureChangePassword.delegate = self
         
         changePasswod.addGestureRecognizer(tapGestureChangePassword)
+        
+        setUI()
     }
     
     @IBAction func logOutAction(_ sender: Any) {
@@ -82,6 +85,19 @@ class ManageAccountViewController: UIViewController, UIGestureRecognizerDelegate
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let changePassword = storyboard.instantiateViewController(withIdentifier: "ChangePasswordViewController")
         navigationController?.pushViewController(changePassword, animated: true)
+    }
+    
+    func setUI(){
+        nameTxt.isEnabled = true
+        nameTxt.borderStyle = .none
+        
+        setUIAvartar(image: image)
+        
+        email.text = UserDefaults.standard.string(forKey: "email")
+        nameTxt.text = UserDefaults.standard.string(forKey: "name")
+        
+        setUIButton(button: logOutBtn)
+        setUIButton(button: deleteAccountBtn)
     }
 }
 

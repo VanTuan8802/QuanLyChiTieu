@@ -22,10 +22,14 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     
+    var account: ((String, String) -> Void)?
+    
     var showPassword: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUI()
     }
     
     @IBAction func registerAction(_ sender: Any) {
@@ -45,13 +49,22 @@ class RegisterViewController: UIViewController {
                         }))
                         self.present(alert, animated: true, completion: nil)
                     }else{
-                        let alert = UIAlertController(title: "Error", message:"Go to Email to verify link" , preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                            NSLog("The \"OK\" alert occured.")
+                        let alert = UIAlertController(title: "", message:"Go to Email to verify link" , preferredStyle: .alert)
+
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [self] (action: UIAlertAction!) in
+                            
+                            if let accountdata = account,
+                               let email = emailTxt.text,
+                               let password = passwordTxt.text{
+                                    accountdata(email,password)
+                            }
+                            navigationController?.popViewController(animated: true)
+                        }))
+                        
+                        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                            print("Handle Cancel Logic here")
                         }))
                         self.present(alert, animated: true, completion: nil)
-                        
-                        
                     }
                 })
                 
@@ -67,4 +80,26 @@ class RegisterViewController: UIViewController {
         (UIApplication.shared.delegate as? AppDelegate)?.window?.makeKeyAndVisible()
     }
     
+    func setUI(){
+        nameValidate.isHidden = true
+        emailValidate.isHidden = true
+        passwordValidate.isHidden = true
+        confirmPasswordValidate.isHidden = true
+        
+        passwordTxt.isSecureTextEntry = true
+        confirmPasswordTxt.isSecureTextEntry = true
+        
+        setUITextField(textField: nameTxt)
+        setUITextField(textField: emailTxt)
+        setUITextField(textField: passwordTxt)
+        setUITextField(textField: confirmPasswordTxt)
+        
+        nameValidate.isHidden = true
+        emailValidate.isHidden = true
+        passwordValidate.isHidden = true
+        confirmPasswordValidate.isHidden = true
+        
+        setUIButton(button: registerBtn)
+        
+    }
 }

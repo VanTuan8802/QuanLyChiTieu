@@ -18,10 +18,8 @@ class AccountViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var produce: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        emailAccont.text = UserDefaults.standard.string(forKey: "email")
-        nameAccount.text = UserDefaults.standard.string(forKey: "name")
-
+    
+        setUI()
         
         let tapGestureManageAccount = UITapGestureRecognizer(target: self, action: #selector(goToManageAccount))
         let tapGestureSetting = UITapGestureRecognizer(target: self, action: #selector(goToSetting))
@@ -40,25 +38,27 @@ class AccountViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @objc func goToManageAccount(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewProfile = storyboard.instantiateViewController(withIdentifier: "ManageAccountViewController")
-        navigationController?.pushViewController(viewProfile, animated: true)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ManageAccountViewController")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func goToSetting(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewProfile = storyboard.instantiateViewController(withIdentifier: "SettingViewController")
-        let nav = UINavigationController(rootViewController: viewProfile)
-        nav.setNavigationBarHidden(true, animated: true)
-        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = nav
-        (UIApplication.shared.delegate as? AppDelegate)?.window?.makeKeyAndVisible()
+        let vc = storyboard.instantiateViewController(withIdentifier: "SettingViewController")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func goToProduce(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewProfile = storyboard.instantiateViewController(withIdentifier: "ProduceViewController")
-        let nav = UINavigationController(rootViewController: viewProfile)
-        nav.setNavigationBarHidden(true, animated: true)
-        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = nav
-        (UIApplication.shared.delegate as? AppDelegate)?.window?.makeKeyAndVisible()
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProduceViewController")
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func setUI(){
+        setUIAvartar(image: imageAccount)
+        
+        emailAccont.text = UserDefaults.standard.string(forKey: "email")
+        nameAccount.text = UserDefaults.standard.string(forKey: "name")
+
     }
 }

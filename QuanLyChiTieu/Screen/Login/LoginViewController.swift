@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         passwordTxt.isSecureTextEntry = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -43,10 +43,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let registerVC = mainStoryboard.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
-        registerVC.modalPresentationStyle = .fullScreen
-        self.present(registerVC, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let registerVC = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        navigationController?.pushViewController(registerVC, animated: true)
     }
     
     @IBAction func loginGoogleAction(_ sender: Any) {
@@ -59,7 +58,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        Auth.auth().signIn(withEmail: emailTxt.text!, password: passwordTxt.text!){authResult,error in
+        Auth.auth().signIn(withEmail: emailTxt.text!, password: passwordTxt.text!){ [self]authResult,error in
             if(error != nil){
                 self.showAlert(title: "Error", message:error?.localizedDescription ?? "Exception")
             }else{
@@ -78,7 +77,7 @@ class LoginViewController: UIViewController {
                         UserDefaults.standard.set(true, forKey: "isLoggedIn")
                         UserDefaults.standard.set(self.emailTxt.text, forKey: "email")
                     }else{
-                        self.showAlert(title: "Errow", message: "Tài khoản chưa được xác thực")
+                        self.showAlert(title: "Error", message: "Tài khoản chưa được xác thực")
                     }
                     
                 })
@@ -117,7 +116,7 @@ class LoginViewController: UIViewController {
     @IBAction func showPasswordValidate(_ sender: Any) {
         passwordValidate.isHidden = false
         passwordValidate.text = checkPassword(password: passwordTxt.text!)
-        passwordValidate.layer.cornerRadius = 15
+        passwordTxt.layer.cornerRadius = 15
     }
     
     @IBAction func rememberAction(_ sender: Any) {
@@ -174,6 +173,8 @@ extension UIViewController{
         button.backgroundColor = UIColor(red: 0.51, green: 0.76, blue: 0.83, alpha: 1.00)
         button.layer.cornerRadius = 25
         button.clipsToBounds = true
+        button.titleLabel?.textColor = .black
+        button.titleLabel?.font = UIFont(name: "System-Bold", size: 26)
     }
     
     func setUIButtonLogin(button : UIButton){
@@ -184,8 +185,14 @@ extension UIViewController{
     }
     
     func setUITextField(textField : UITextField){
-        textField.layer.cornerRadius = 20
-        textField.layer.borderWidth = 1
+        textField.layer.cornerRadius = 5
+        textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.masksToBounds = true
+    }
+    
+    func setUIAvartar(image : UIImageView){
+        image.layer.cornerRadius = 60
+        image.layer.borderColor = UIColor.black.cgColor
     }
 }

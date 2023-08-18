@@ -33,9 +33,6 @@ class IncomeInfoTableViewCell: UITableViewCell {
     
     func bindData(incomeInfor : IncomeInfor){
         name.text = incomeInfor.name
-
-        // Create Date Formatter
-        let dateFormatter = DateFormatter()
         
         date.text = incomeInfor.date
         value.text = String(format:"%.2f", incomeInfor.value)

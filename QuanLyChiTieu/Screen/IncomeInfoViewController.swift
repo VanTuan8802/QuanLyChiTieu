@@ -13,16 +13,21 @@ import FirebaseAuth
 class IncomeInfoViewController: UIViewController{
     
     @IBOutlet weak var header: UILabel!
-    
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var incomeInfoTableView: UITableView!
+    
+    var titleLb: String?
     
     var incomeInfo : IncomeInfor!
     
-    private var incomeInfos: [IncomeInfor]?
+    private var incomeInfos: [IncomeInfor] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        header.text = titleLb
+        
         setupTableView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,22 +49,28 @@ class IncomeInfoViewController: UIViewController{
         }
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     private func setupTableView() {
         incomeInfoTableView.delegate = self
         incomeInfoTableView.dataSource = self
         incomeInfoTableView.register(UINib(nibName: "IncomeInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "IncomeInfoTableViewCell")
     }
     
+   
+    
 }
 
 extension IncomeInfoViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return incomeInfos!.count
+        return incomeInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IncomeInfoTableViewCell", for: indexPath) as! IncomeInfoTableViewCell
-        let incomeInfo = incomeInfos![indexPath.row]
+        let incomeInfo = incomeInfos[indexPath.row]
         
         cell.bindData(incomeInfor: incomeInfo)
         return cell

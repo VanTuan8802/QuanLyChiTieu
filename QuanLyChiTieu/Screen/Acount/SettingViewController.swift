@@ -23,11 +23,6 @@ class SettingViewController: UIViewController {
     }
 
     @IBAction func backAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewProfile = storyboard.instantiateViewController(withIdentifier: "AccountViewController")
-        let nav = UINavigationController(rootViewController: viewProfile)
-        nav.setNavigationBarHidden(true, animated: true)
-        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = nav
-        (UIApplication.shared.delegate as? AppDelegate)?.window?.makeKeyAndVisible()
+        navigationController?.popViewController(animated: true)
     }
 }

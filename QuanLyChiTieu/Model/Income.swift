@@ -6,14 +6,29 @@
 //
 
 import Foundation
+struct JSON {
+    static let encoder = JSONEncoder()
+}
 
-struct IncomeInfor{
+extension Encodable {
+    // đoạn này sẽ convert dữ liệu từ object thành dictionary
+    var dictionary: [String: Any] {
+        return (try? JSONSerialization.jsonObject(with: JSON.encoder.encode(self))) as? [String: Any] ?? [:]
+    }
+    subscript(key: String) -> Any? {
+        return dictionary[key]
+    }
+    
+}
+
+struct IncomeInfor : Codable{
     var name : String
     var date : String
     var value : Float
+    
 }
 
-struct Income{
+struct Income : Codable{
     var name : String
     var sum : Float
     var list : [IncomeInfor]?

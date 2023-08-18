@@ -22,10 +22,6 @@ class ProduceViewController: UIViewController {
     }
     
     @IBAction func backAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewProfile = storyboard.instantiateViewController(withIdentifier: "AccountViewController")
-        let nav = UINavigationController(rootViewController: viewProfile)
-        navigationController?.popToViewController(viewProfile, animated: true)
-        tabBarController?.tabBar.isHidden = false
+        navigationController?.popViewController(animated: true)
     }
 }
