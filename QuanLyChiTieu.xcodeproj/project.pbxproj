@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E645FD22A98D3BF00BF39A0 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E645FD12A98D3BF00BF39A0 /* Extention.swift */; };
+		0E8AD9E72A95E684007CB291 /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */; };
+		0E8AD9E82A95E684007CB291 /* SpendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */; };
 		0E937FE72A812CD90015DA19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FE62A812CD90015DA19 /* AppDelegate.swift */; };
 		0E937FE92A812CD90015DA19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FE82A812CD90015DA19 /* SceneDelegate.swift */; };
 		0E937FEE2A812CD90015DA19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E937FEC2A812CD90015DA19 /* Main.storyboard */; };
@@ -30,23 +33,15 @@
 		0E93803A2A8383F00015DA19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380392A8383F00015DA19 /* SettingViewController.swift */; };
 		0E93803C2A8383FF0015DA19 /* ProduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93803B2A8383FF0015DA19 /* ProduceViewController.swift */; };
 		0E93803E2A8396090015DA19 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93803D2A8396090015DA19 /* ChangePasswordViewController.swift */; };
-		0E9380402A83980C0015DA19 /* LastIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93803F2A83980C0015DA19 /* LastIncomeViewController.swift */; };
 		0E9380422A8398220015DA19 /* IncomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */; };
-		0E9380442A8398390015DA19 /* LastIncomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380432A8398390015DA19 /* LastIncomeInfoViewController.swift */; };
-		0E9380462A8398540015DA19 /* LastSpendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380452A8398540015DA19 /* LastSpendingViewController.swift */; };
 		0E9380482A8398650015DA19 /* SpendingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */; };
-		0E93804A2A83987E0015DA19 /* LastSpendingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */; };
 		0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E93804B2A83D9F50015DA19 /* Assets.xcassets */; };
 		0E93804E2A88ACF60015DA19 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93804D2A88ACF60015DA19 /* Account.swift */; };
 		0E9380502A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E93804F2A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist */; };
 		0E9380552A8CCF050015DA19 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380532A8CCF050015DA19 /* IncomeTableViewCell.swift */; };
 		0E9380562A8CCF050015DA19 /* IncomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9380542A8CCF050015DA19 /* IncomeTableViewCell.xib */; };
-		0E93805D2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93805B2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift */; };
-		0E93805E2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E93805C2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib */; };
-		0E9380612A8CD2060015DA19 /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93805F2A8CD2060015DA19 /* SpendingTableViewCell.swift */; };
-		0E9380622A8CD2060015DA19 /* SpendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9380602A8CD2060015DA19 /* SpendingTableViewCell.xib */; };
-		0E9380652A8CD2180015DA19 /* SpendingInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380632A8CD2180015DA19 /* SpendingInfoTableViewCell.swift */; };
-		0E9380662A8CD2180015DA19 /* SpendingInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9380642A8CD2180015DA19 /* SpendingInfoTableViewCell.xib */; };
+		0E93805D2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93805B2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift */; };
+		0E93805E2A8CD0B50015DA19 /* FinanceInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E93805C2A8CD0B50015DA19 /* FinanceInfoTableViewCell.xib */; };
 		0E9380682A8CE8AA0015DA19 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380672A8CE8AA0015DA19 /* Income.swift */; };
 		0E93806A2A8CFA8E0015DA19 /* Spending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380692A8CFA8E0015DA19 /* Spending.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +61,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E645FD12A98D3BF00BF39A0 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
+		0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingTableViewCell.xib; sourceTree = "<group>"; };
 		0E937FE32A812CD90015DA19 /* QuanLyChiTieu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyChiTieu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E937FE62A812CD90015DA19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E937FE82A812CD90015DA19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,23 +91,15 @@
 		0E9380392A8383F00015DA19 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0E93803B2A8383FF0015DA19 /* ProduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduceViewController.swift; sourceTree = "<group>"; };
 		0E93803D2A8396090015DA19 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		0E93803F2A83980C0015DA19 /* LastIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastIncomeViewController.swift; sourceTree = "<group>"; };
 		0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeInfoViewController.swift; sourceTree = "<group>"; };
-		0E9380432A8398390015DA19 /* LastIncomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastIncomeInfoViewController.swift; sourceTree = "<group>"; };
-		0E9380452A8398540015DA19 /* LastSpendingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSpendingViewController.swift; sourceTree = "<group>"; };
 		0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfoViewController.swift; sourceTree = "<group>"; };
-		0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSpendingInfoViewController.swift; sourceTree = "<group>"; };
 		0E93804B2A83D9F50015DA19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E93804D2A88ACF60015DA19 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		0E93804F2A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		0E9380532A8CCF050015DA19 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
 		0E9380542A8CCF050015DA19 /* IncomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeTableViewCell.xib; sourceTree = "<group>"; };
-		0E93805B2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeInfoTableViewCell.swift; sourceTree = "<group>"; };
-		0E93805C2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomeInfoTableViewCell.xib; sourceTree = "<group>"; };
-		0E93805F2A8CD2060015DA19 /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
-		0E9380602A8CD2060015DA19 /* SpendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingTableViewCell.xib; sourceTree = "<group>"; };
-		0E9380632A8CD2180015DA19 /* SpendingInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfoTableViewCell.swift; sourceTree = "<group>"; };
-		0E9380642A8CD2180015DA19 /* SpendingInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingInfoTableViewCell.xib; sourceTree = "<group>"; };
+		0E93805B2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceInfoTableViewCell.swift; sourceTree = "<group>"; };
+		0E93805C2A8CD0B50015DA19 /* FinanceInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinanceInfoTableViewCell.xib; sourceTree = "<group>"; };
 		0E9380672A8CE8AA0015DA19 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		0E9380692A8CFA8E0015DA19 /* Spending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spending.swift; sourceTree = "<group>"; };
 		5FEFE2E89147EE007EA49486 /* Pods-QuanLyChiTieu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuanLyChiTieu.debug.xcconfig"; path = "Target Support Files/Pods-QuanLyChiTieu/Pods-QuanLyChiTieu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +119,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E645FD02A98D3A100BF39A0 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				0E645FD12A98D3BF00BF39A0 /* Extention.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		0E8AD9E42A95E66C007CB291 /* SpendingCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */,
+				0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */,
+			);
+			path = SpendingCell;
+			sourceTree = "<group>";
+		};
 		0E937FDA2A812CD90015DA19 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +157,7 @@
 		0E937FE52A812CD90015DA19 /* QuanLyChiTieu */ = {
 			isa = PBXGroup;
 			children = (
+				0E645FD02A98D3A100BF39A0 /* Extention */,
 				0E9380102A81C0D60015DA19 /* Model */,
 				0E937FFC2A812FDD0015DA19 /* Screen */,
 				0E937FE62A812CD90015DA19 /* AppDelegate.swift */,
@@ -174,6 +182,7 @@
 				0E9380082A81BF640015DA19 /* Home */,
 				0E9380092A81BF6E0015DA19 /* Income */,
 				0E93800A2A81BF7A0015DA19 /* Spending */,
+				0E9380522A8CBC0E0015DA19 /* FinanceInfo */,
 				0E93800B2A81BFBB0015DA19 /* Acount */,
 			);
 			path = Screen;
@@ -236,10 +245,7 @@
 			children = (
 				0E9380512A8CBC010015DA19 /* IncomeCell */,
 				0E93802C2A8283C40015DA19 /* IncomeViewController.swift */,
-				0E93803F2A83980C0015DA19 /* LastIncomeViewController.swift */,
-				0E9380522A8CBC0E0015DA19 /* IncomeInfoCell */,
 				0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */,
-				0E9380432A8398390015DA19 /* LastIncomeInfoViewController.swift */,
 			);
 			name = Income;
 			sourceTree = "<group>";
@@ -247,12 +253,9 @@
 		0E93800A2A81BF7A0015DA19 /* Spending */ = {
 			isa = PBXGroup;
 			children = (
-				0E9380582A8CCFDB0015DA19 /* SpendingInfoCell */,
-				0E9380572A8CCFCC0015DA19 /* SpendingCell */,
+				0E8AD9E42A95E66C007CB291 /* SpendingCell */,
 				0E93802E2A8283D00015DA19 /* SpendingViewController.swift */,
 				0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */,
-				0E9380452A8398540015DA19 /* LastSpendingViewController.swift */,
-				0E9380492A83987E0015DA19 /* LastSpendingInfoViewController.swift */,
 			);
 			path = Spending;
 			sourceTree = "<group>";
@@ -288,31 +291,13 @@
 			name = IncomeCell;
 			sourceTree = "<group>";
 		};
-		0E9380522A8CBC0E0015DA19 /* IncomeInfoCell */ = {
+		0E9380522A8CBC0E0015DA19 /* FinanceInfo */ = {
 			isa = PBXGroup;
 			children = (
-				0E93805B2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift */,
-				0E93805C2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib */,
+				0E93805B2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift */,
+				0E93805C2A8CD0B50015DA19 /* FinanceInfoTableViewCell.xib */,
 			);
-			name = IncomeInfoCell;
-			sourceTree = "<group>";
-		};
-		0E9380572A8CCFCC0015DA19 /* SpendingCell */ = {
-			isa = PBXGroup;
-			children = (
-				0E93805F2A8CD2060015DA19 /* SpendingTableViewCell.swift */,
-				0E9380602A8CD2060015DA19 /* SpendingTableViewCell.xib */,
-			);
-			path = SpendingCell;
-			sourceTree = "<group>";
-		};
-		0E9380582A8CCFDB0015DA19 /* SpendingInfoCell */ = {
-			isa = PBXGroup;
-			children = (
-				0E9380632A8CD2180015DA19 /* SpendingInfoTableViewCell.swift */,
-				0E9380642A8CD2180015DA19 /* SpendingInfoTableViewCell.xib */,
-			);
-			path = SpendingInfoCell;
+			name = FinanceInfo;
 			sourceTree = "<group>";
 		};
 		7A3D6197D8B68E97B359A06F /* Frameworks */ = {
@@ -403,9 +388,8 @@
 				0E9380022A8130D20015DA19 /* TutorialCollectionViewCell.xib in Resources */,
 				0E9380562A8CCF050015DA19 /* IncomeTableViewCell.xib in Resources */,
 				0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */,
-				0E93805E2A8CD0B50015DA19 /* IncomeInfoTableViewCell.xib in Resources */,
-				0E9380662A8CD2180015DA19 /* SpendingInfoTableViewCell.xib in Resources */,
-				0E9380622A8CD2060015DA19 /* SpendingTableViewCell.xib in Resources */,
+				0E93805E2A8CD0B50015DA19 /* FinanceInfoTableViewCell.xib in Resources */,
+				0E8AD9E82A95E684007CB291 /* SpendingTableViewCell.xib in Resources */,
 				0E9380502A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,25 +444,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E93802D2A8283C40015DA19 /* IncomeViewController.swift in Sources */,
-				0E9380652A8CD2180015DA19 /* SpendingInfoTableViewCell.swift in Sources */,
 				0E9380132A81E6820015DA19 /* TabbarViewController.swift in Sources */,
-				0E9380612A8CD2060015DA19 /* SpendingTableViewCell.swift in Sources */,
 				0E9380552A8CCF050015DA19 /* IncomeTableViewCell.swift in Sources */,
 				0E9380312A8283DC0015DA19 /* AccountViewController.swift in Sources */,
-				0E9380442A8398390015DA19 /* LastIncomeInfoViewController.swift in Sources */,
 				0E9380382A8383E60015DA19 /* ManageAccountViewController.swift in Sources */,
 				0E93804E2A88ACF60015DA19 /* Account.swift in Sources */,
 				0E93806A2A8CFA8E0015DA19 /* Spending.swift in Sources */,
 				0E93800D2A81C0B60015DA19 /* LoginViewController.swift in Sources */,
-				0E9380462A8398540015DA19 /* LastSpendingViewController.swift in Sources */,
-				0E9380402A83980C0015DA19 /* LastIncomeViewController.swift in Sources */,
-				0E93805D2A8CD0B50015DA19 /* IncomeInfoTableViewCell.swift in Sources */,
+				0E93805D2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift in Sources */,
 				0E93803A2A8383F00015DA19 /* SettingViewController.swift in Sources */,
 				0E9380012A8130D20015DA19 /* TutorialCollectionViewCell.swift in Sources */,
 				0E9380482A8398650015DA19 /* SpendingInfoViewController.swift in Sources */,
 				0E93803C2A8383FF0015DA19 /* ProduceViewController.swift in Sources */,
 				0E93800F2A81C0CA0015DA19 /* RegisterViewController.swift in Sources */,
+				0E8AD9E72A95E684007CB291 /* SpendingTableViewCell.swift in Sources */,
 				0E9380152A823D6F0015DA19 /* CustomStyleTabBarContentView.swift in Sources */,
+				0E645FD22A98D3BF00BF39A0 /* Extention.swift in Sources */,
 				0E93802B2A8283BB0015DA19 /* HomeViewController.swift in Sources */,
 				0E9380042A81BF1C0015DA19 /* TutorialViewController.swift in Sources */,
 				0E93803E2A8396090015DA19 /* ChangePasswordViewController.swift in Sources */,
@@ -486,7 +467,6 @@
 				0E937FE72A812CD90015DA19 /* AppDelegate.swift in Sources */,
 				0E937FE92A812CD90015DA19 /* SceneDelegate.swift in Sources */,
 				0E93802F2A8283D00015DA19 /* SpendingViewController.swift in Sources */,
-				0E93804A2A83987E0015DA19 /* LastSpendingInfoViewController.swift in Sources */,
 				0E9380172A823D7D0015DA19 /* AppNavigationController.swift in Sources */,
 				0E9380422A8398220015DA19 /* IncomeInfoViewController.swift in Sources */,
 			);
@@ -639,6 +619,10 @@
 				DEVELOPMENT_TEAM = P82L6D3NV5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuanLyChiTieu/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -670,6 +654,10 @@
 				DEVELOPMENT_TEAM = P82L6D3NV5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuanLyChiTieu/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

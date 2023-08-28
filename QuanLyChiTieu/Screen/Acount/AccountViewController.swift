@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class AccountViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -16,6 +18,10 @@ class AccountViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var manageAccount: UIView!
     @IBOutlet weak var setting: UIView!
     @IBOutlet weak var produce: UIView!
+    
+    var databaseRef = Database.database().reference()
+    var account : Account?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -34,7 +40,25 @@ class AccountViewController: UIViewController, UIGestureRecognizerDelegate {
         produce.addGestureRecognizer(tapGestureProduce)
     }
     
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let currentUser = Auth.auth().currentUser?.uid else { return }
+        let userRef = databaseRef.child("account").child(currentUser)
+        userRef.observeSingleEvent(of: .value) { snapshot in
+            if let accountData = snapshot.value as? [String: Any]{
+                let name = accountData["name"] as? String ?? ""
+                let image = accountData["image"] as? String ?? ""
+                
+                self.nameAccount.text = name
+                if let imageURL = URL(string: image) {
+                    self.imageAccount.kf.setImage(with: imageURL)
+                    
+                    print(imageURL)
+                }
+            }
+        }
+    }
     
     @objc func goToManageAccount(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

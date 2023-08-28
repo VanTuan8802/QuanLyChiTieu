@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTxt: UITextField!
     @IBOutlet weak var passwordValidate: UILabel!
     
+    @IBOutlet weak var forgotPasswordBtn: UIButton!
     @IBOutlet weak var rememberPasswordBtn: UIButton!
     @IBOutlet weak var hidePassword: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
@@ -122,6 +123,10 @@ class LoginViewController: UIViewController {
     @IBAction func rememberAction(_ sender: Any) {
     }
     
+    @IBAction func forgotPasswordAction(_ sender: Any) {
+    }
+    
+    
     func setUI(){
         emailValidate.isHidden = true
         passwordValidate.isHidden = true
@@ -194,5 +199,85 @@ extension UIViewController{
     func setUIAvartar(image : UIImageView){
         image.layer.cornerRadius = 60
         image.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    func convertDateToString(date : Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let dateString = dateFormatter.string(from: date)
+        return dateString
+    }
+    
+    func loadDataIncome(month : String)->([Income],Float){
+        var incomes : [Income] = []
+        var sum : Float = 0
+        let databaseRef = Database.database().reference()
+        
+        if let currentUser = Auth.auth().currentUser?.uid{
+            databaseRef.child("income").child(month).child(currentUser).observeSingleEvent(of: .value) { [weak self] SnapshotData,_   in
+                guard let strongSelf = self else{
+                    return
+                }
+                
+                if let incomeData = SnapshotData.value as? [String:Any]{
+                    for(_ , incomeInfo) in incomeData{
+                        if let incomeInfoData = incomeInfo as? [String: Any]{
+                            let id = incomeInfoData["id"] as? String ?? ""
+                            let name = incomeInfoData["name"] as? String ?? ""
+                            let month = incomeInfoData["date"] as? String ?? ""
+                            let value = incomeInfoData["value"] as? Float ?? 0
+                            sum = sum + value
+                            
+                            incomes.append(Income(id: id ,name: name ,month:month, sum: value, list: []))
+                        }
+                    }
+                }
+            }
+        }
+        
+        return (incomes,sum)
+    }
+    
+    func loadDataFinance(type: String,month: String,id:String)->([FinanceInfo],Float){
+        var financeInfos : [FinanceInfo] = []
+        var sum : Float = 0.0
+        
+        let databaseRef = Database.database().reference()
+        if let currentUser = Auth.auth().currentUser?.uid{
+            databaseRef.child(type).child(month).child(currentUser).child(id).child("list").observeSingleEvent(of: .value) { [weak self] SnapshotData,_  in
+                guard let strongSelf = self else{
+                    return
+                }
+                
+                if let financeList = SnapshotData.value as? [String:Any]{
+                    for (_,finance) in financeList {
+                        if let financeData = finance as? [String: Any]{
+                            let name = financeData["name"] as? String ?? ""
+                            let date = financeData["date"] as? String ?? ""
+                            let value = financeData["value"] as? Float ?? 0.0
+                            sum += value
+                            
+                            financeInfos.append(FinanceInfo(name: name, date: date, value: value))
+                        }
+                    }
+                }
+            }
+        }
+        return(financeInfos,sum)
+    }
+    
+
+    
+    class func convertStringToDate(from dateString: String)->Int?{
+        let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            if let date = dateFormatter.date(from: dateString) {
+                let calendar = Calendar.current
+                let month = calendar.component(.month, from: date)
+                return month
+            }
+            
+            return nil
     }
 }

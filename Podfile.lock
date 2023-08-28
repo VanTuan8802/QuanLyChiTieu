@@ -1,10 +1,16 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.7.1)
   - AppAuth (1.6.2):
     - AppAuth/Core (= 1.6.2)
     - AppAuth/ExternalUserAgent (= 1.6.2)
   - AppAuth/Core (1.6.2)
   - AppAuth/ExternalUserAgent (1.6.2):
     - AppAuth/Core
+  - Charts (4.1.0):
+    - Charts/Core (= 4.1.0)
+  - Charts/Core (4.1.0):
+    - SwiftAlgorithms (~> 1.0)
+  - DropDown (2.3.13)
   - ESTabBarController-swift (2.8.0)
   - Firebase/CoreOnly (10.13.0):
     - FirebaseCore (= 10.13.0)
@@ -64,8 +70,12 @@ PODS:
   - Kingfisher (7.9.0)
   - leveldb-library (1.22.2)
   - PromisesObjC (2.3.1)
+  - SwiftAlgorithms (1.0.0)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
+  - Charts
+  - DropDown
   - ESTabBarController-swift
   - Firebase/Storage
   - FirebaseAuth
@@ -76,7 +86,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ActionSheetPicker-3.0
     - AppAuth
+    - Charts
+    - DropDown
     - ESTabBarController-swift
     - Firebase
     - FirebaseAppCheckInterop
@@ -95,9 +108,13 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - PromisesObjC
+    - SwiftAlgorithms
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: 36da254b97a09ff89679ecb8b8510bd3e5bdc773
   AppAuth: 3bb1d1cd9340bd09f5ed189fb00b1cc28e1e8570
+  Charts: ce0768268078eee0336f122c3c4ca248e4e204c5
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   Firebase: 343d7539befb614d22b2eae24759f6307b1175e9
   FirebaseAppCheckInterop: 5e12dc623d443dedffcde9c6f3ed41510125d8ef
@@ -116,7 +133,8 @@ SPEC CHECKSUMS:
   Kingfisher: 59f908b6d2f403b0a3e539debb0eec05cb27002c
   leveldb-library: f03246171cce0484482ec291f88b6d563699ee06
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
+  SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
 
-PODFILE CHECKSUM: f67664677d6860535f3b1629e9c38cc9129aeb67
+PODFILE CHECKSUM: 45edd4e905a1a4f309faf547e7a5426717a35449
 
 COCOAPODS: 1.12.1

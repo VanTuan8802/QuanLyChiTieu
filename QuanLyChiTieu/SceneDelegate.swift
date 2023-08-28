@@ -21,8 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         (UIApplication.shared.delegate as? AppDelegate)?.window = window
         
-        print(UserDefaults.standard.bool(forKey: "tutorialCompleted"))
-        
         if UserDefaults.standard.bool(forKey: "tutorialCompleted") {
            
             if UserDefaults.standard.bool(forKey: "isLoggedIn") {

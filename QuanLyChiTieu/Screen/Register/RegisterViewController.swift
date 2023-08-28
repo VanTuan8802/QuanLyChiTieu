@@ -80,6 +80,48 @@ class RegisterViewController: UIViewController {
         (UIApplication.shared.delegate as? AppDelegate)?.window?.makeKeyAndVisible()
     }
     
+    @IBAction func editName(_ sender: Any) {
+        nameValidate.isHidden = true
+    }
+    
+    @IBAction func showNameErrorValidate(_ sender: Any) {
+        if nameTxt.text?.isEmpty == true {
+            nameValidate.text = "Họ tên không được trống"
+        }else{
+            nameValidate.isHidden = true
+        }
+    }
+    
+    @IBAction func editEmail(_ sender: Any) {
+        emailValidate.isHidden = true
+    }
+    
+    @IBAction func showEmailErrorValidate(_ sender: Any) {
+        emailValidate.isHidden = false
+        emailValidate.text = checkEmail(email: emailTxt.text!)
+        emailTxt.layer.cornerRadius = 15
+    }
+    
+    @IBAction func editPassword(_ sender: Any) {
+        passwordValidate.isHidden = true
+    }
+    
+    @IBAction func showPasswordErrorValidate(_ sender: Any) {
+        passwordValidate.isHidden = false
+        passwordValidate.text = checkPassword(password: passwordTxt.text!)
+        passwordTxt.layer.cornerRadius = 15
+    }
+    
+    @IBAction func editConfirmPassword(_ sender: Any) {
+    }
+    
+    @IBAction func showConfirmPasswordErrorValidate(_ sender: Any) {
+        confirmPasswordValidate.isHidden = false
+        confirmPasswordValidate.text = checkPassword(password: confirmPasswordTxt.text!)
+        confirmPasswordTxt.layer.cornerRadius = 15
+    }
+    
+    
     func setUI(){
         nameValidate.isHidden = true
         emailValidate.isHidden = true

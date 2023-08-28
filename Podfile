@@ -11,6 +11,10 @@ target 'QuanLyChiTieu' do
   pod 'Kingfisher'
   pod 'GoogleSignIn'
   pod 'GoogleSignInSwiftSupport'
+  pod 'ActionSheetPicker-3.0'
+  pod 'DropDown'
+  pod 'Charts'
+
   # Pods for QuanLyChiTieu
   
 end

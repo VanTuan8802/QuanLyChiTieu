@@ -14,8 +14,8 @@
             filePath = "QuanLyChiTieu/Screen/Login/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "loginAppleAction(_:)"
             landmarkType = "7">
             <Locations>
@@ -94,6 +94,21 @@
                   endingLineNumber = "63"
                   offsetFromSymbolStart = "20">
                </Location>
+               <Location
+                  uuid = "43E87A5E-48DE-4279-94A6-E45F3D0ECC5F - 217f93c711c01070"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuanLyChiTieu.LoginViewController.loginAppleAction(Any) -&gt; ()"
+                  moduleName = "QuanLyChiTieu"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nguyentuan/Documents/Techmaster/QuanLyChiTieu/QuanLyChiTieu/Screen/Login/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "20">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -107,8 +122,8 @@
             filePath = "QuanLyChiTieu/Model/Spending.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "Spending"
             landmarkType = "14">
          </BreakpointContent>
@@ -123,8 +138,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>
@@ -171,8 +186,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>
@@ -219,8 +234,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>
@@ -267,8 +282,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>
@@ -315,8 +330,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>
@@ -363,8 +378,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>
@@ -411,8 +426,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>
@@ -459,8 +474,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>
@@ -507,8 +522,8 @@
             filePath = "QuanLyChiTieu/SceneDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "scene(_:willConnectTo:options:)"
             landmarkType = "7">
             <Locations>

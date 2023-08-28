@@ -21,20 +21,24 @@ extension Encodable {
     
 }
 
-struct IncomeInfor : Codable{
+struct FinanceInfo : Codable{
     var name : String
     var date : String
     var value : Float
-    
 }
 
+
 struct Income : Codable{
+    var id : String
     var name : String
+    var month : String
     var sum : Float
-    var list : [IncomeInfor]?
+    var list : [FinanceInfo]?
     
-    init(name: String, sum: Float, list: [IncomeInfor]? = nil) {
+    init(id: String, name: String, month: String, sum: Float, list: [FinanceInfo]? = nil) {
+        self.id = id
         self.name = name
+        self.month = month
         self.sum = sum
         self.list = list
     }
