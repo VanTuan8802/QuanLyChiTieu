@@ -18,7 +18,6 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var incomeTableView: UITableView!
     @IBOutlet weak var monthSegment: UISegmentedControl!
     
-    //var income : Income!
     private var incomes : [Income] = []
     let databaseRef = Database.database().reference()
     var sum : Float = 0;
@@ -31,10 +30,6 @@ class IncomeViewController: UIViewController {
         setupTableView()
         monthSegment.selectedSegmentIndex = 1
         loadData(month: month)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     @IBAction func monthSegmentAction(_ sender: UISegmentedControl) {
@@ -58,6 +53,7 @@ class IncomeViewController: UIViewController {
         getDataIncome(month: month) { incomes, sumValue in
             self.incomes = incomes
             self.incomeTableView.reloadData()
+            self.sum = sumValue
             self.sumValue.text = "Tổng thu nhập là \(sumValue)"
         }
     }
@@ -113,9 +109,11 @@ extension IncomeViewController : UITableViewDataSource{
 
 extension IncomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let incomeInfo = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "IncomeInfoViewController") as! IncomeInfoViewController
-        incomeInfo.titleLb = incomes[indexPath.row].name
-        incomeInfo.id = incomes[indexPath.row].id
-        navigationController?.pushViewController(incomeInfo, animated: true)
+        let finance = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinanceViewController") as! FinanceViewController
+        finance.titleLb = incomes[indexPath.row].name
+        finance.id = incomes[indexPath.row].id
+        finance.month = month
+        finance.type = "income"
+        navigationController?.pushViewController(finance, animated: true)
     }
 }

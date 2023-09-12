@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E645FD22A98D3BF00BF39A0 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E645FD12A98D3BF00BF39A0 /* Extention.swift */; };
+		0E5B29302AA214CF004443B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B292F2AA214CF004443B8 /* GoogleService-Info.plist */; };
+		0E5B29382AB09702004443B8 /* setUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B29372AB09702004443B8 /* setUI.swift */; };
+		0E645FD22A98D3BF00BF39A0 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E645FD12A98D3BF00BF39A0 /* LoadData.swift */; };
 		0E8AD9E72A95E684007CB291 /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */; };
 		0E8AD9E82A95E684007CB291 /* SpendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */; };
 		0E937FE72A812CD90015DA19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FE62A812CD90015DA19 /* AppDelegate.swift */; };
 		0E937FE92A812CD90015DA19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FE82A812CD90015DA19 /* SceneDelegate.swift */; };
 		0E937FEE2A812CD90015DA19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E937FEC2A812CD90015DA19 /* Main.storyboard */; };
 		0E937FF32A812CDA0015DA19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E937FF12A812CDA0015DA19 /* LaunchScreen.storyboard */; };
-		0E937FFB2A812DDF0015DA19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E937FFA2A812DDF0015DA19 /* GoogleService-Info.plist */; };
 		0E9380012A8130D20015DA19 /* TutorialCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937FFF2A8130D20015DA19 /* TutorialCollectionViewCell.swift */; };
 		0E9380022A8130D20015DA19 /* TutorialCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9380002A8130D20015DA19 /* TutorialCollectionViewCell.xib */; };
 		0E9380042A81BF1C0015DA19 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380032A81BF1C0015DA19 /* TutorialViewController.swift */; };
@@ -33,8 +34,7 @@
 		0E93803A2A8383F00015DA19 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380392A8383F00015DA19 /* SettingViewController.swift */; };
 		0E93803C2A8383FF0015DA19 /* ProduceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93803B2A8383FF0015DA19 /* ProduceViewController.swift */; };
 		0E93803E2A8396090015DA19 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93803D2A8396090015DA19 /* ChangePasswordViewController.swift */; };
-		0E9380422A8398220015DA19 /* IncomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */; };
-		0E9380482A8398650015DA19 /* SpendingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */; };
+		0E9380422A8398220015DA19 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9380412A8398220015DA19 /* FinanceViewController.swift */; };
 		0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E93804B2A83D9F50015DA19 /* Assets.xcassets */; };
 		0E93804E2A88ACF60015DA19 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E93804D2A88ACF60015DA19 /* Account.swift */; };
 		0E9380502A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E93804F2A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist */; };
@@ -61,7 +61,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E645FD12A98D3BF00BF39A0 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		0E5B292F2AA214CF004443B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0E5B29372AB09702004443B8 /* setUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setUI.swift; sourceTree = "<group>"; };
+		0E645FD12A98D3BF00BF39A0 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
 		0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
 		0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingTableViewCell.xib; sourceTree = "<group>"; };
 		0E937FE32A812CD90015DA19 /* QuanLyChiTieu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuanLyChiTieu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +72,6 @@
 		0E937FED2A812CD90015DA19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E937FF22A812CDA0015DA19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E937FF42A812CDA0015DA19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E937FFA2A812DDF0015DA19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E937FFF2A8130D20015DA19 /* TutorialCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E9380002A8130D20015DA19 /* TutorialCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E9380032A81BF1C0015DA19 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -91,8 +92,7 @@
 		0E9380392A8383F00015DA19 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0E93803B2A8383FF0015DA19 /* ProduceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduceViewController.swift; sourceTree = "<group>"; };
 		0E93803D2A8396090015DA19 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
-		0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeInfoViewController.swift; sourceTree = "<group>"; };
-		0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingInfoViewController.swift; sourceTree = "<group>"; };
+		0E9380412A8398220015DA19 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		0E93804B2A83D9F50015DA19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E93804D2A88ACF60015DA19 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		0E93804F2A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
@@ -119,10 +119,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E5B29342AA8AFDF004443B8 /* FinanceCell */ = {
+			isa = PBXGroup;
+			children = (
+				0E93805C2A8CD0B50015DA19 /* FinanceInfoTableViewCell.xib */,
+				0E93805B2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift */,
+			);
+			name = FinanceCell;
+			sourceTree = "<group>";
+		};
 		0E645FD02A98D3A100BF39A0 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
-				0E645FD12A98D3BF00BF39A0 /* Extention.swift */,
+				0E645FD12A98D3BF00BF39A0 /* LoadData.swift */,
+				0E5B29372AB09702004443B8 /* setUI.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -165,9 +175,9 @@
 				0E937FEC2A812CD90015DA19 /* Main.storyboard */,
 				0E937FF12A812CDA0015DA19 /* LaunchScreen.storyboard */,
 				0E93804B2A83D9F50015DA19 /* Assets.xcassets */,
+				0E5B292F2AA214CF004443B8 /* GoogleService-Info.plist */,
 				0E937FF42A812CDA0015DA19 /* Info.plist */,
 				0E93804F2A8A6ED10015DA19 /* client_211558243083-73p4uk195gqfucetlf2u0lsjr0kuln49.apps.googleusercontent.com.plist */,
-				0E937FFA2A812DDF0015DA19 /* GoogleService-Info.plist */,
 			);
 			path = QuanLyChiTieu;
 			sourceTree = "<group>";
@@ -245,7 +255,6 @@
 			children = (
 				0E9380512A8CBC010015DA19 /* IncomeCell */,
 				0E93802C2A8283C40015DA19 /* IncomeViewController.swift */,
-				0E9380412A8398220015DA19 /* IncomeInfoViewController.swift */,
 			);
 			name = Income;
 			sourceTree = "<group>";
@@ -255,7 +264,6 @@
 			children = (
 				0E8AD9E42A95E66C007CB291 /* SpendingCell */,
 				0E93802E2A8283D00015DA19 /* SpendingViewController.swift */,
-				0E9380472A8398650015DA19 /* SpendingInfoViewController.swift */,
 			);
 			path = Spending;
 			sourceTree = "<group>";
@@ -294,8 +302,8 @@
 		0E9380522A8CBC0E0015DA19 /* FinanceInfo */ = {
 			isa = PBXGroup;
 			children = (
-				0E93805B2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift */,
-				0E93805C2A8CD0B50015DA19 /* FinanceInfoTableViewCell.xib */,
+				0E5B29342AA8AFDF004443B8 /* FinanceCell */,
+				0E9380412A8398220015DA19 /* FinanceViewController.swift */,
 			);
 			name = FinanceInfo;
 			sourceTree = "<group>";
@@ -383,8 +391,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E937FF32A812CDA0015DA19 /* LaunchScreen.storyboard in Resources */,
-				0E937FFB2A812DDF0015DA19 /* GoogleService-Info.plist in Resources */,
 				0E937FEE2A812CD90015DA19 /* Main.storyboard in Resources */,
+				0E5B29302AA214CF004443B8 /* GoogleService-Info.plist in Resources */,
 				0E9380022A8130D20015DA19 /* TutorialCollectionViewCell.xib in Resources */,
 				0E9380562A8CCF050015DA19 /* IncomeTableViewCell.xib in Resources */,
 				0E93804C2A83D9F50015DA19 /* Assets.xcassets in Resources */,
@@ -446,6 +454,7 @@
 				0E93802D2A8283C40015DA19 /* IncomeViewController.swift in Sources */,
 				0E9380132A81E6820015DA19 /* TabbarViewController.swift in Sources */,
 				0E9380552A8CCF050015DA19 /* IncomeTableViewCell.swift in Sources */,
+				0E5B29382AB09702004443B8 /* setUI.swift in Sources */,
 				0E9380312A8283DC0015DA19 /* AccountViewController.swift in Sources */,
 				0E9380382A8383E60015DA19 /* ManageAccountViewController.swift in Sources */,
 				0E93804E2A88ACF60015DA19 /* Account.swift in Sources */,
@@ -454,12 +463,11 @@
 				0E93805D2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift in Sources */,
 				0E93803A2A8383F00015DA19 /* SettingViewController.swift in Sources */,
 				0E9380012A8130D20015DA19 /* TutorialCollectionViewCell.swift in Sources */,
-				0E9380482A8398650015DA19 /* SpendingInfoViewController.swift in Sources */,
 				0E93803C2A8383FF0015DA19 /* ProduceViewController.swift in Sources */,
 				0E93800F2A81C0CA0015DA19 /* RegisterViewController.swift in Sources */,
 				0E8AD9E72A95E684007CB291 /* SpendingTableViewCell.swift in Sources */,
 				0E9380152A823D6F0015DA19 /* CustomStyleTabBarContentView.swift in Sources */,
-				0E645FD22A98D3BF00BF39A0 /* Extention.swift in Sources */,
+				0E645FD22A98D3BF00BF39A0 /* LoadData.swift in Sources */,
 				0E93802B2A8283BB0015DA19 /* HomeViewController.swift in Sources */,
 				0E9380042A81BF1C0015DA19 /* TutorialViewController.swift in Sources */,
 				0E93803E2A8396090015DA19 /* ChangePasswordViewController.swift in Sources */,
@@ -468,7 +476,7 @@
 				0E937FE92A812CD90015DA19 /* SceneDelegate.swift in Sources */,
 				0E93802F2A8283D00015DA19 /* SpendingViewController.swift in Sources */,
 				0E9380172A823D7D0015DA19 /* AppNavigationController.swift in Sources */,
-				0E9380422A8398220015DA19 /* IncomeInfoViewController.swift in Sources */,
+				0E9380422A8398220015DA19 /* FinanceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

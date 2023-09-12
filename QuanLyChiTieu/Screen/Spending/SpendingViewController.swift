@@ -17,8 +17,9 @@ class SpendingViewController: UIViewController{
     @IBOutlet weak var spendingTableView: UITableView!
     @IBOutlet weak var addBtn: UIButton!
     
-    var month : String = "nowIncome"
-    var spending : Spending!
+    var month: String  = getNowMonth()
+    var lastmonth: String = getLastMonthYear()
+    
     var spendings : [Spending] = []
     var sum : Float = 0;
     
@@ -27,7 +28,7 @@ class SpendingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       loadDataSpending(month: month)
     }
     
     private func setupTableView() {
@@ -36,37 +37,30 @@ class SpendingViewController: UIViewController{
         spendingTableView.register(UINib(nibName: "IncomeTableViewCell", bundle: nil), forCellReuseIdentifier: "IncomeTableViewCell")
     }
     
-    func loadData(month : String){
-//        spendings.removeAll()
-//        sum  = 0
-//        if let currentUser = Auth.auth().currentUser?.uid{
-//            databaseRef.child("spending").child(month).child(currentUser).observeSingleEvent(of: .value) {  snapshot  in
-//                if let spendingData = snapshot.value as? [String:Any]{
-//                    for(_ , spendingInfo) in spendingData{
-//                        if let spending = spendingInfo as? [String: Any]{
-//                            let id = spendingInfo["id"] as? String ?? ""
-//                            let name = spendingInfo["name"] as? String ?? ""
-//                            let value = spendingInfo["value"] as? Float ?? 0
-//                            let lever = spendingInfo["lever"] as? Float ?? 0
-//                            self!.sum = self!.sum + value
-//                            
-//                            self.spendings.append(Spending(id: id, name: name, sum: sum, lever: lever))
-//                        }
-//                    }
-//                }
-//                self.spendingTableView.reloadData()
-//                self!.sumValue.text = "Tổng thu nhập là \(self!.sum)"
-//            }
-//        }
+    func loadDataSpending(month : String){
+        getDataSpending(month: month){ spendings,sumValue in
+            self.spendings = spendings
+            self.spendingTableView.reloadData()
+            self.sumLb.text = "Tổng chi tiêu là \(sumValue)"
+
+        }
     }
 
     func addData(spending : Spending ){
         if let currentUser = Auth.auth().currentUser?.uid{
-            databaseRef.child("spending").child(month).child(currentUser).child(spending.id).setValue(spending.dictionary)
+            databaseRef.child("spending").child(currentUser).child(spending.id).setValue(spending.dictionary)
         }
     }
     
-    @IBAction func convertTab(_ sender: Any) {
+    @IBAction func convertTab(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex{
+        case 0:
+            loadDataSpending(month: lastmonth)
+            addBtn.isHidden = true
+        default:
+            loadDataSpending(month: month)
+            addBtn.isHidden = false
+        }
     }
    
     @IBAction func addAction(_ sender: Any) {
@@ -88,7 +82,7 @@ class SpendingViewController: UIViewController{
                 let month = UIViewController.getNowMonth()
         
                 addData(spending: Spending(id: id, name: name,month: month, sum: 0, lever: level!,list: []))
-                loadData(month: month)
+                loadDataSpending(month: month)
                 
                })
             let cancelAction = UIAlertAction(title: "Cancel", style:.default, handler: {
@@ -114,5 +108,14 @@ extension SpendingViewController:UITableViewDelegate,UITableViewDataSource{
         
         cell.bindData(spending: spending)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let incomeInfo = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinanceViewController") as! FinanceViewController
+        incomeInfo.titleLb = spendings[indexPath.row].name
+        incomeInfo.id = spendings[indexPath.row].id
+        incomeInfo.month = month
+        incomeInfo.type = "income"
+        navigationController?.pushViewController(incomeInfo, animated: true)
     }
 }

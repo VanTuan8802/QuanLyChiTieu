@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>316393868316-03e2sho8msmkheio9eilqs78tn4hn79o.apps.googleusercontent.com</string>
+	<string>574060180868-5up3c2kbhibtkaevljes0osdkur9a7nt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.316393868316-03e2sho8msmkheio9eilqs78tn4hn79o</string>
+	<string>com.googleusercontent.apps.574060180868-5up3c2kbhibtkaevljes0osdkur9a7nt</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCxSTw26jbEilEcvSzwAAyrv97SMAHkI4U</string>
+	<string>AIzaSyBpcoQ91-Rg_4b6EdWRw62Ajq-jGzgJIUw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>316393868316</string>
+	<string>574060180868</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>tuan2k2mt-gmail.com.QuanLyChiTieu</string>
 	<key>PROJECT_ID</key>
-	<string>quanlychitieu-7e1fd</string>
+	<string>quanlychitieu-5adfe</string>
 	<key>STORAGE_BUCKET</key>
-	<string>quanlychitieu-7e1fd.appspot.com</string>
+	<string>quanlychitieu-5adfe.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:316393868316:ios:86af64f8689c12208aa3d9</string>
+	<string>1:574060180868:ios:a7326d15c0fead2d1f19d1</string>
+	<key>DATABASE_URL</key>
+	<string>https://quanlychitieu-5adfe-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

@@ -11,20 +11,27 @@ struct JSON {
 }
 
 extension Encodable {
-    // đoạn này sẽ convert dữ liệu từ object thành dictionary
     var dictionary: [String: Any] {
         return (try? JSONSerialization.jsonObject(with: JSON.encoder.encode(self))) as? [String: Any] ?? [:]
     }
+    
     subscript(key: String) -> Any? {
         return dictionary[key]
     }
-    
 }
 
 struct FinanceInfo : Codable{
+    var id : String
     var name : String
     var date : String
     var value : Float
+    
+    init(id: String, name: String, date: String, value: Float) {
+        self.id = id
+        self.name = name
+        self.date = date
+        self.value = value
+    }
 }
 
 

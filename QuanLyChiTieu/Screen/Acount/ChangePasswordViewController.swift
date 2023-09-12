@@ -22,6 +22,7 @@ class ChangePasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUI()
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -30,14 +31,13 @@ class ChangePasswordViewController: UIViewController {
     
     @IBAction func saveAction(_ sender: Any) {
         if let user = Auth.auth().currentUser {
-            let newPassword = "newPasswordHere" // Replace with the new password you want to set
+            let newPassword = "newPasswordHere" 
 
             user.updatePassword(to: newPasswordTxt.text!) { error in
                 if let error = error {
-                    // Handle error
-                    print("Error changing password: \(error.localizedDescription)")
+                    self.showAlert(title: "Error", message:"\(error.localizedDescription)")
                 } else {
-                    print("Password changed successfully!")
+                    self.showAlert(title: "Successfully", message: "Password changed successfully")
                 }
             }
         }
@@ -56,6 +56,10 @@ class ChangePasswordViewController: UIViewController {
         if confirmNewPasswordTxt.text == newPasswordTxt.text{
             confirmNewPasswordValidate.text = "Confirm password not same password"
         }
+    }
+ 
+    func setUI(){
+        setUIButton(button: saveBtn)
     }
     
 }

@@ -32,7 +32,6 @@ class HomeViewController: UIViewController {
                 }
             })
         }
-        setupPieChart()
     }
     
     
@@ -40,19 +39,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
-    func setupPieChart(){
-        let incomes : [Income] = loadDataIncome(month: "lastIncome").0
-        
-        var name : [String] = []
-        var value : [Float] = []
-        
-        for income in incomes {
-            name.append(income.name)
-            value.append(income.sum)
-        }
-        
-        let data : [ChartDataEntry]
-    }
+    
 }
 
 

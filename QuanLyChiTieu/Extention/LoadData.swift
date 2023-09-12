@@ -11,12 +11,11 @@ import FirebaseAuth
 import FirebaseDatabase
 
 extension UIViewController{
-    
     class func getNowMonth()->String{
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-yyyy"
-
+        
         let currentDate = Date()
         let currentMonthYearString = dateFormatter.string(from: currentDate)
         
@@ -43,7 +42,7 @@ extension UIViewController{
             let lastMonthString = dateFormatter.string(from: lastMonthDate)
             return lastMonthString
         }
-       return ""
+        return ""
     }
     
     func getDataIncome(month: String, completion: @escaping ([Income], Float) -> Void) {
@@ -57,38 +56,37 @@ extension UIViewController{
             query.observeSingleEvent(of: .value) { snapshot in
                 if let incomeData = snapshot.value as? [String: [String: Any]] {
                     for (incomeId, data) in incomeData {
-                        if let month = data["month"] as? String,
-                           let name = data["name"] as? String,
+                        if let name = data["name"] as? String,
+                           let month = data["month"] as? String,
                            let sum = data["sum"] as? Float {
                             incomes.append(Income(id: incomeId, name: name, month: month, sum: sum, list: []))
                             sumValue += sum
                         }
                     }
                 }
-                
-                completion(incomes, sumValue) 
+                completion(incomes, sumValue)
             }
         } else {
             completion([], 0)
         }
     }
-
     
-    func getDataSpending(month:String)->([Spending],Float){
+    func getDataSpending(month: String, completion: @escaping ([Spending], Float) -> Void) {
         var spendings : [Spending] = []
         var sumValue : Float = 0
-        let databaseRef = Database.database().reference()
         
         if let currentUser = Auth.auth().currentUser?.uid{
-            let query =  databaseRef.child("spending").child(currentUser).queryOrdered(byChild: "month").queryEqual(toValue: "08-2023")
+            let databaseRef = Database.database().reference()
+            let query = databaseRef.child("spending").child(currentUser).queryOrdered(byChild: "month").queryEqual(toValue: month)
             
             query.observeSingleEvent(of: .value) { [weak self] snapshot, _ in
                 guard self != nil else {
                     return
                 }
                 
-                if let incomeData = snapshot.value as? [String: [String: Any]] {
-                    for (spendingId, data) in incomeData {
+                if let spendingData = snapshot.value as? [String: [String: Any]] {
+                    print(spendingData)
+                    for (spendingId, data) in spendingData {
                         if let month = data["month"] as? String,
                            let name = data["name"] as? String,
                            let lever = data["level"] as? Float,
@@ -100,36 +98,66 @@ extension UIViewController{
                         }
                     }
                 }
+                print("as")
+                print(spendings.count)
+                completion(spendings,sumValue)
             }
+        }else{
+            completion([],0)
         }
-        return (spendings,sumValue)
     }
     
-    func getDataFinance(type : String , month : String , id : String ) ->([FinanceInfo],Float){
+    func getDataFinance(type : String, month : String, id : String, completion: @escaping([FinanceInfo],Float)->Void){
         var finances : [FinanceInfo] = []
         var sumValue : Float = 0.0
         let databaseRef = Database.database().reference()
         
         if let currenUser = Auth.auth().currentUser?.uid{
-            let query = databaseRef.child(type).child(currenUser).child(id).queryOrdered(byChild: "month").queryEqual(toValue: month)
-            query.observeSingleEvent(of: .value) { [weak self] snapshot, _ in
-                guard self != nil else {
-                    return
-                }
-                
+            let query = databaseRef.child(type).child(currenUser).child(id).child("list")
+            
+            query.observeSingleEvent(of: .value) { snapshot in
                 if let financeDatas = snapshot.value as? [String: [String: Any]] {
-                    for (_, data) in financeDatas {
-                        if let date = data["date"] as? String,
-                           let name = data["name"] as? String,
+                    for (id, data) in financeDatas {
+                        if let name = data["name"] as? String,
+                           let date = data["date"] as? String,
                            let value = data["value"] as? Float{
-                            finances.append(FinanceInfo(name: name, date: date, value: value))
-                            
+                            finances.append(FinanceInfo(id:id,name: name, date: date, value: value))
                             sumValue += value
                         }
                     }
                 }
+                completion(finances,sumValue)
             }
+        }else{
+            completion([],0)
         }
-        return (finances,sumValue)
+    }
+    
+    func findDataFinance(type: String, id : String, name: String, completion: @escaping([FinanceInfo],Float)->Void){
+        var finances : [FinanceInfo] = []
+        var sumValue : Float = 0.0
+        let databaseRef = Database.database().reference()
+        
+        if let currenUser = Auth.auth().currentUser?.uid{
+            let query = databaseRef.child(type).child(currenUser).child(id).child("list").queryOrdered(byChild: "name").queryEqual(toValue: name)
+            
+            query.observeSingleEvent(of: .value) { snapshot in
+                if let financeDatas = snapshot.value as? [String: [String: Any]] {
+                    print(financeDatas)
+                    for (id, data) in financeDatas {
+                        if let name = data["name"] as? String,
+                           let date = data["date"] as? String,
+                           let value = data["value"] as? Float{
+                            print(name)
+                            finances.append(FinanceInfo(id:id,name: name, date: date, value: value))
+                            sumValue += value
+                        }
+                    }
+                }
+                completion(finances,sumValue)
+            }
+        }else{
+            completion([],0)
+        }
     }
 }

@@ -433,7 +433,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
                                                     <action selector="editName:" destination="U9C-JM-2e6" eventType="editingDidBegin" id="Ikx-FW-du0"/>
-                                                    <action selector="showErrorValidate:" destination="U9C-JM-2e6" eventType="editingDidEnd" id="3SV-kz-vvX"/>
+                                                    <action selector="showNameErrorValidate:" destination="U9C-JM-2e6" eventType="editingDidEnd" id="y08-sG-osz"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY4-xF-Eei">
@@ -814,123 +814,6 @@
             </objects>
             <point key="canvasLocation" x="2278.6259541984732" y="886.61971830985919"/>
         </scene>
-        <!--Income Info View Controller-->
-        <scene sceneID="1nw-bB-Jjh">
-            <objects>
-                <viewController storyboardIdentifier="IncomeInfoViewController" id="BHC-yX-qqY" customClass="IncomeInfoViewController" customModule="QuanLyChiTieu" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SsG-Qu-pLZ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaX-hx-MC0">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiền lương" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd1-0Y-yk2">
-                                        <rect key="frame" x="96.666666666666686" y="56" width="200" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="r5z-uU-cxs"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-L9-H9c">
-                                        <rect key="frame" x="20" y="56" width="24" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="ZO4-VX-JVB"/>
-                                            <constraint firstAttribute="height" constant="24" id="s4k-zf-yd7"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="back"/>
-                                        <connections>
-                                            <action selector="backAction:" destination="BHC-yX-qqY" eventType="touchUpInside" id="SzS-vN-dOF"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Yd1-0Y-yk2" secondAttribute="bottom" constant="20" id="0qI-WP-8hu"/>
-                                    <constraint firstAttribute="height" constant="100" id="7jc-Ax-VNI"/>
-                                    <constraint firstItem="3sz-L9-H9c" firstAttribute="leading" secondItem="MaX-hx-MC0" secondAttribute="leading" constant="20" id="NhC-zF-06W"/>
-                                    <constraint firstAttribute="bottom" secondItem="3sz-L9-H9c" secondAttribute="bottom" constant="20" id="VW8-A6-ed6"/>
-                                    <constraint firstItem="Yd1-0Y-yk2" firstAttribute="centerX" secondItem="MaX-hx-MC0" secondAttribute="centerX" id="grD-4a-cqa"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rgZ-9r-YqE">
-                                <rect key="frame" x="0.0" y="170" width="393" height="568"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zq7-Cc-MYa">
-                                <rect key="frame" x="0.0" y="110" width="393" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="01F-c0-Gnb"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BHC-yX-qqY" id="seS-Ki-cjh"/>
-                                </connections>
-                            </searchBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Lr-8D-Lbe">
-                                <rect key="frame" x="0.0" y="738" width="393" height="80"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcq-3g-UET">
-                                        <rect key="frame" x="310" y="25" width="32" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="add"/>
-                                        <connections>
-                                            <action selector="addAction:" destination="BHC-yX-qqY" eventType="touchUpInside" id="hLo-ZS-dok"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHR-gG-NGp">
-                                        <rect key="frame" x="20" y="28" width="250" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="250" id="SwI-Rq-RSU"/>
-                                            <constraint firstAttribute="height" constant="24" id="V1x-m3-RM4"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="dHR-gG-NGp" firstAttribute="centerY" secondItem="1Lr-8D-Lbe" secondAttribute="centerY" id="NoN-hb-nT5"/>
-                                    <constraint firstItem="dHR-gG-NGp" firstAttribute="leading" secondItem="1Lr-8D-Lbe" secondAttribute="leading" constant="20" id="dYc-bF-uMd"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Klo-FM-aMe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="rgZ-9r-YqE" firstAttribute="leading" secondItem="Klo-FM-aMe" secondAttribute="leading" id="Ajz-oG-Yfr"/>
-                            <constraint firstItem="zq7-Cc-MYa" firstAttribute="leading" secondItem="Klo-FM-aMe" secondAttribute="leading" id="BY1-b2-meU"/>
-                            <constraint firstItem="rgZ-9r-YqE" firstAttribute="top" secondItem="zq7-Cc-MYa" secondAttribute="bottom" constant="10" id="CeH-DE-Tlh"/>
-                            <constraint firstItem="zq7-Cc-MYa" firstAttribute="top" secondItem="MaX-hx-MC0" secondAttribute="bottom" constant="10" id="D2i-T6-muB"/>
-                            <constraint firstItem="1Lr-8D-Lbe" firstAttribute="leading" secondItem="Klo-FM-aMe" secondAttribute="leading" id="D69-8G-U3H"/>
-                            <constraint firstItem="rgZ-9r-YqE" firstAttribute="trailing" secondItem="Klo-FM-aMe" secondAttribute="trailing" id="F4v-1N-rd3"/>
-                            <constraint firstItem="1Lr-8D-Lbe" firstAttribute="bottom" secondItem="Klo-FM-aMe" secondAttribute="bottom" id="FV6-Hj-4ls"/>
-                            <constraint firstItem="1Lr-8D-Lbe" firstAttribute="top" secondItem="rgZ-9r-YqE" secondAttribute="bottom" id="IkQ-FY-RKN"/>
-                            <constraint firstItem="Klo-FM-aMe" firstAttribute="trailing" secondItem="1Lr-8D-Lbe" secondAttribute="trailing" id="KDY-eW-KxN"/>
-                            <constraint firstItem="MaX-hx-MC0" firstAttribute="leading" secondItem="Klo-FM-aMe" secondAttribute="leading" id="LpK-a6-MTP"/>
-                            <constraint firstItem="zq7-Cc-MYa" firstAttribute="trailing" secondItem="Klo-FM-aMe" secondAttribute="trailing" id="LwD-bo-TZ0"/>
-                            <constraint firstItem="MaX-hx-MC0" firstAttribute="top" secondItem="SsG-Qu-pLZ" secondAttribute="top" id="QWW-jX-JE0"/>
-                            <constraint firstItem="MaX-hx-MC0" firstAttribute="trailing" secondItem="Klo-FM-aMe" secondAttribute="trailing" id="gyF-lU-vgL"/>
-                            <constraint firstItem="Klo-FM-aMe" firstAttribute="bottom" secondItem="rgZ-9r-YqE" secondAttribute="bottom" constant="80" id="ovd-OA-qiG"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="addData" destination="Dcq-3g-UET" id="VdR-pW-zGB"/>
-                        <outlet property="backBtn" destination="3sz-L9-H9c" id="dph-m0-XYF"/>
-                        <outlet property="financeInfoTableView" destination="rgZ-9r-YqE" id="xRM-p3-Sr0"/>
-                        <outlet property="header" destination="Yd1-0Y-yk2" id="eVh-rD-GJG"/>
-                        <outlet property="showSum" destination="dHR-gG-NGp" id="tro-F7-dQJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ecX-LA-9zv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3707.6335877862593" y="883.80281690140851"/>
-        </scene>
         <!--Spending View Controller-->
         <scene sceneID="A10-H0-fdN">
             <objects>
@@ -966,8 +849,8 @@
                                     <constraint firstAttribute="height" constant="40" id="mKk-pf-Gxl"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Tháng trước"/>
+                                    <segment title="Tháng hiện tại"/>
                                 </segments>
                                 <connections>
                                     <action selector="convertTab:" destination="6P7-dW-VFp" eventType="valueChanged" id="pbH-GX-rTs"/>
@@ -1042,10 +925,10 @@
             </objects>
             <point key="canvasLocation" x="2278.6259541984732" y="1878.8732394366198"/>
         </scene>
-        <!--Spending Info View Controller-->
+        <!--Finance View Controller-->
         <scene sceneID="HAj-Yy-0rx">
             <objects>
-                <viewController storyboardIdentifier="SpendingInfoViewController" id="aDN-cz-ASu" customClass="SpendingInfoViewController" customModule="QuanLyChiTieu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FinanceViewController" id="aDN-cz-ASu" customClass="FinanceViewController" customModule="QuanLyChiTieu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yJk-HF-49t">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1071,6 +954,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="aDN-cz-ASu" eventType="touchUpInside" id="U5z-0l-b21"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1151,15 +1037,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addBtn" destination="Xtg-mn-iIT" id="PpI-lL-9Rk"/>
-                        <outlet property="financeTableView" destination="rCs-iT-aoS" id="Ptk-4v-nxy"/>
-                        <outlet property="headerLb" destination="icP-s0-RtV" id="fKR-rX-qwt"/>
-                        <outlet property="sumLB" destination="ut7-cH-Aop" id="aFc-gb-pRD"/>
+                        <outlet property="addBtn" destination="Xtg-mn-iIT" id="0K8-TN-CB9"/>
+                        <outlet property="backBtn" destination="LKd-Mw-3X6" id="P8k-jm-wib"/>
+                        <outlet property="financeInfoTableView" destination="rCs-iT-aoS" id="YwU-x6-ZFG"/>
+                        <outlet property="header" destination="icP-s0-RtV" id="M8j-k1-8JA"/>
+                        <outlet property="seachBar" destination="PIa-fQ-10d" id="gD5-UE-W9n"/>
+                        <outlet property="showSum" destination="ut7-cH-Aop" id="ZtV-ye-Est"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERO-ur-3jX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3707.6335877862593" y="1883.8028169014085"/>
+            <point key="canvasLocation" x="3818" y="1454"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="yQV-69-WQ3">
