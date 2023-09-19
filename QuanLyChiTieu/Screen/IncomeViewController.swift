@@ -20,7 +20,7 @@ class IncomeViewController: UIViewController {
     
     private var incomes : [Income] = []
     let databaseRef = Database.database().reference()
-    var sum : Float = 0;
+    private var sum : Float = 0;
     
     var month: String  = getNowMonth()
     var lastmonth: String = getLastMonthYear()
@@ -32,21 +32,26 @@ class IncomeViewController: UIViewController {
         loadData(month: month)
     }
     
-    @IBAction func monthSegmentAction(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex{
-        case 0:
-            loadData(month: lastmonth)
-            addBtn.isHidden = true
-        default:
-            loadData(month: month)
-            addBtn.isHidden = false
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
     private func setupTableView() {
         incomeTableView.delegate = self
         incomeTableView.dataSource = self
-        incomeTableView.register(UINib(nibName: "IncomeTableViewCell", bundle: nil), forCellReuseIdentifier: "IncomeTableViewCell")
+        incomeTableView.register(UINib(nibName: IncomeTableViewCell.id, bundle: nil), forCellReuseIdentifier: IncomeTableViewCell.id)
     }
     
     func loadData(month : String){
@@ -60,7 +65,18 @@ class IncomeViewController: UIViewController {
 
     func addData(income : Income ){
         if let currentUser = Auth.auth().currentUser?.uid{
-            databaseRef.child("income").child(currentUser).child(income.id).setValue(income.dictionary)
+            databaseRef.child(Constant.Key.income).child(currentUser).child(income.id).setValue(income.dictionary)
+        }
+    }
+    
+    @IBAction func monthSegmentAction(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex{
+        case 0:
+            loadData(month: lastmonth)
+            addBtn.isHidden = true
+        default:
+            loadData(month: month)
+            addBtn.isHidden = false
         }
     }
     
@@ -75,10 +91,23 @@ class IncomeViewController: UIViewController {
             let name = alertController.textFields![0].text ?? ""
             let month = UIViewController.getNowMonth()
             
-            addData(income: Income(id: id, name: name, month: month, sum: 0,list: []))
-            loadData(month: month)
-            
+            var incomeExists = false
+
+            for income in incomes {
+                if income.name == name {
+                    incomeExists = true
+                    break
+                }
+            }
+
+            if incomeExists {
+                self.showAlert(title: "Error", message: "Đã có thu nhập trong danh sách")
+            } else {
+                addData(income: Income(id: id, name: name, month: month, sum: 0, list: []))
+                loadData(month: month)
+            }
         })
+        
         let cancelAction = UIAlertAction(title: "Cancel", style:.default, handler: {
             (action : UIAlertAction!) -> Void in })
         
@@ -95,7 +124,7 @@ extension IncomeViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IncomeTableViewCell", for: indexPath) as! IncomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: IncomeTableViewCell.id, for: indexPath) as! IncomeTableViewCell
         let income = incomes[indexPath.row]
         
         cell.bindData(income: income)

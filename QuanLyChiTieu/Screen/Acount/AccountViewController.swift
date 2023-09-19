@@ -42,20 +42,20 @@ class AccountViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        guard let currentUser = Auth.auth().currentUser?.uid else { return }
-        let userRef = databaseRef.child("account").child(currentUser)
-        userRef.observeSingleEvent(of: .value) { snapshot in
-            if let accountData = snapshot.value as? [String: Any]{
-                let name = accountData["name"] as? String ?? ""
-                let image = accountData["image"] as? String ?? ""
-                
-                self.nameAccount.text = name
-                if let imageURL = URL(string: image) {
-                    self.imageAccount.kf.setImage(with: imageURL)
-                    
-                    print(imageURL)
-                }
+    }
+    
+    func setUI(){
+        setUIAvartar(image: imageAccount)
+        emailAccont.text = UserDefaults.standard.string(forKey: "email")
+        LoadDataAccount()
+    }
+    
+    func LoadDataAccount(){
+        getDataAccount { name,image in
+            self.nameAccount.text = name
+            if let imageURL = URL(string: image) {
+                print(imageURL)
+                self.imageAccount.kf.setImage(with: imageURL)
             }
         }
     }
@@ -76,13 +76,5 @@ class AccountViewController: UIViewController, UIGestureRecognizerDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProduceViewController")
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func setUI(){
-        setUIAvartar(image: imageAccount)
-        
-        emailAccont.text = UserDefaults.standard.string(forKey: "email")
-        nameAccount.text = UserDefaults.standard.string(forKey: "name")
-
     }
 }

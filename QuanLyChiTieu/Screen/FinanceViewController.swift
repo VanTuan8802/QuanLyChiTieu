@@ -19,31 +19,81 @@ class FinanceViewController: UIViewController{
     @IBOutlet weak var seachBar: UISearchBar!
     @IBOutlet weak var showSum: UILabel!
     
-    var finances :[FinanceInfo] = []
+    private var finances: [FinanceInfo] = []
+    
+    private var searchFinance: [FinanceInfo] = [] {
+        didSet {
+            financeInfoTableView.reloadData()
+        }
+    }
+    
     var titleLb: String!
     
     var month : String!
     var type : String!
     var id :String!
     
-    var sum : Float? = 0.0;
-    
+    var sum : Float? = 0.0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         header.text = titleLb
         setupTableView()
         loadDataFinanceInfo()
+        searchFinance = finances
     }
-
     
-    @IBAction func backAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
     private func setupTableView() {
         financeInfoTableView.delegate = self
         financeInfoTableView.dataSource = self
         financeInfoTableView.register(UINib(nibName: "FinanceInfoTableViewCell", bundle: nil), forCellReuseIdentifier: "FinanceInfoTableViewCell")
+    }
+    
+    private func loadDataFinanceInfo() {
+        getDataFinance(type: type, month: month, id: id) { [self] financeInfos, sum in
+            self.finances = financeInfos
+            self.searchFinance = financeInfos
+            self.sum = sum
+            self.showSum.text = "Tổng \( titleLb ?? "0.0" ) là : \(sum)"
+        }
+    }
+    
+    private func addDataFinance(finance : FinanceInfo ){
+        if let currentUser = Auth.auth().currentUser?.uid{
+            let databaseRef = Database.database().reference()
+            databaseRef.child(Constant.Key.income).child(currentUser).child(id!).child("list").childByAutoId().setValue(finance.dictionary)
+            
+            let updatedValue = ["sum": self.sum]
+            databaseRef.child(Constant.Key.spending).child(currentUser)
+            
+            databaseRef.child("income").child(currentUser).child(id).updateChildValues(updatedValue as [AnyHashable : Any]) { (error, ref) in
+                if let error = error {
+                    print("Error updating value: \(error.localizedDescription)")
+                } else {
+                    print("Value updated successfully!")
+                }
+            }
+        }
+    }
+
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func addAction(_ sender: Any) {
@@ -80,40 +130,16 @@ class FinanceViewController: UIViewController{
         
     }
     
-    func loadDataFinanceInfo() {
-        getDataFinance(type: type, month: month, id: id) { [self] financeInfos, sum in
-            self.finances = financeInfos
-            self.financeInfoTableView.reloadData()
-            self.sum = sum
-            self.showSum.text = "Tổng \( titleLb ?? "0.0" ) là : \(sum)"
-        }
-    }
-    
-    func addDataFinance(finance : FinanceInfo ){
-        if let currentUser = Auth.auth().currentUser?.uid{
-            let databaseRef = Database.database().reference()
-            databaseRef.child("income").child(currentUser).child(id!).child("list").childByAutoId().setValue(finance.dictionary)
-            
-            let updatedValue = ["sum": self.sum]
-            databaseRef.child("income").child(currentUser).child(id).updateChildValues(updatedValue as [AnyHashable : Any]) { (error, ref) in
-                if let error = error {
-                    print("Error updating value: \(error.localizedDescription)")
-                } else {
-                    print("Value updated successfully!")
-                }
-            }
-        }
-    }
 }
 
 extension FinanceViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return finances.count
+        return searchFinance.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FinanceInfoTableViewCell", for: indexPath) as! FinanceInfoTableViewCell
-        let financeInfo = finances[indexPath.row]
+        let financeInfo = searchFinance[indexPath.row]
         
         cell.bindData(financeInfo: financeInfo)
         return cell
@@ -126,4 +152,24 @@ extension FinanceViewController : UITableViewDataSource{
 
 extension FinanceViewController: UITableViewDelegate {
     
+}
+
+extension FinanceViewController: UISearchBarDelegate{
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            searchFinance = finances
+        } else {
+            searchFinance = finances.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        }
+        financeInfoTableView.reloadData()
+    }
 }

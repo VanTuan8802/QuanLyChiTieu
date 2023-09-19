@@ -25,18 +25,29 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginAppleBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     
-    var showPassword:Bool = false
+    private var showPassword:Bool = false
+    var account: ((String,String)->Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        passwordTxt.isSecureTextEntry = true
-        
+        setUI()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setUI(){
+        emailValidate.isHidden = true
+        passwordValidate.isHidden = true
+        passwordTxt.isSecureTextEntry = true
         
-        setUI()
+        setUITextField(textField: emailTxt)
+        setUITextField(textField: passwordTxt)
         
+        setUIButtonLogin(button: loginGoogleBtn)
+        setUIButtonLogin(button: loginFacebookBtn)
+        setUIButtonLogin(button: loginAppleBtn)
+        
+        setUIButton(button: loginBtn)
     }
     
     @objc func hideKeyboard() {
@@ -45,7 +56,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func registerAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let registerVC = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
+        let registerVC = storyboard.instantiateViewController(withIdentifier: RegisterViewController.id) as! RegisterViewController
+            registerVC.account = {email,password in
+            self.emailTxt.text = email
+            self.passwordTxt.text = password
+        }
         navigationController?.pushViewController(registerVC, animated: true)
     }
     
@@ -66,7 +81,7 @@ class LoginViewController: UIViewController {
                 authResult?.user.reload(completion: { (error) in
                     if authResult?.user.isEmailVerified == true{
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc = storyboard.instantiateViewController(withIdentifier: "TabbarViewController")
+                        let vc = storyboard.instantiateViewController(withIdentifier: TabbarViewController.id)
                         
                         let keyWindow = UIApplication.shared.connectedScenes
                             .filter({$0.activationState == .foregroundActive})
@@ -80,9 +95,7 @@ class LoginViewController: UIViewController {
                     }else{
                         self.showAlert(title: "Error", message: "Tài khoản chưa được xác thực")
                     }
-                    
                 })
-                
             }
         }
     }
@@ -111,7 +124,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func editPasswordTxt(_ sender: Any) {
         passwordValidate.isHidden = true
-        
     }
     
     @IBAction func showPasswordValidate(_ sender: Any) {
@@ -121,24 +133,17 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func rememberAction(_ sender: Any) {
+        
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
-    }
-    
-    
-    func setUI(){
-        emailValidate.isHidden = true
-        passwordValidate.isHidden = true
-        
-        setUITextField(textField: emailTxt)
-        setUITextField(textField: passwordTxt)
-        
-        setUIButtonLogin(button: loginGoogleBtn)
-        setUIButtonLogin(button: loginFacebookBtn)
-        setUIButtonLogin(button: loginAppleBtn)
-        
-        setUIButton(button: loginBtn)
+        Auth.auth().sendPasswordReset(withEmail: emailTxt.text!) { [self] error in
+            if let error = error {
+                print("Error sending password reset email: \(error.localizedDescription)")
+            } else {
+                print("Password reset email sent to \(emailTxt.text!)")
+            }
+        }
     }
 }
 

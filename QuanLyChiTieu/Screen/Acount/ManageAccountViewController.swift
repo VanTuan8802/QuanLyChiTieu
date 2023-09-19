@@ -44,68 +44,25 @@ class ManageAccountViewController: UIViewController, UIGestureRecognizerDelegate
         setUI()
     }
     
-    @IBAction func logOutAction(_ sender: Any) {
-        do {
-            try FirebaseAuth.Auth.auth().signOut()
-            
-            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
-            UserDefaults.standard.removeObject(forKey: "email")
-            
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                appDelegate.window?.rootViewController = loginVC
-            }
-        }catch{
-            self.showAlert(title: "Error", message: "Logout failure")
-        }
-    }
-    
-    @IBAction func changeImageAction(_ sender: Any) {
-        guard let currentUser = Auth.auth().currentUser?.uid else {
-            return
-        }
-        imagePicker.delegate = self
-        handleChooseAvatar()
-    }
-    
-    @IBAction func changeNameTxt(_ sender: Any) {
-        
-    }
-    
-    @IBAction func backAction(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func deleteAccountAction(_ sender: Any) {
-        if let account = Auth.auth().currentUser {
-            account.delete { error in
-                if let error = error {
-                    self.showAlert(title: "Error", message: error.localizedDescription)
-                } else {
-                    self.showAlert(title: "Success", message: "Account delete succesfull")
-                }
-            }
-        }
-    }
-    
-    @objc func goToChangePassword(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let changePassword = storyboard.instantiateViewController(withIdentifier: "ChangePasswordViewController")
-        navigationController?.pushViewController(changePassword, animated: true)
-    }
-    
     func setUI(){
-        nameTxt.isEnabled = true
+        nameTxt.isEnabled = false
         nameTxt.borderStyle = .none
         
         setUIAvartar(image: image)
-        
-        email.text = UserDefaults.standard.string(forKey: "email")
-        nameTxt.text = UserDefaults.standard.string(forKey: "name")
-        
         setUIButton(button: logOutBtn)
         setUIButton(button: deleteAccountBtn)
+        
+        email.text = UserDefaults.standard.string(forKey: "email")
+        LoadDataAccount()
+    }
+    
+    func LoadDataAccount(){
+        getDataAccount { name,image in
+            self.nameTxt.text = name
+            if let imageURL = URL(string: image) {
+                self.image.kf.setImage(with: imageURL)
+            }
+        }
     }
     
     func handleChooseAvatar() {
@@ -179,6 +136,60 @@ class ManageAccountViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
+    
+    @IBAction func logOutAction(_ sender: Any) {
+        do {
+            try FirebaseAuth.Auth.auth().signOut()
+            
+            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
+            UserDefaults.standard.removeObject(forKey: "email")
+            
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                appDelegate.window?.rootViewController = loginVC
+            }
+        }catch{
+            self.showAlert(title: "Error", message: "Logout failure")
+        }
+    }
+    
+    @IBAction func changeImageAction(_ sender: Any) {
+        guard let currentUser = Auth.auth().currentUser?.uid else {
+            return
+        }
+        imagePicker.delegate = self
+        handleChooseAvatar()
+    }
+    
+    @IBAction func changeNameTxt(_ sender: Any) {
+        nameTxt.isEnabled = true
+        
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func deleteAccountAction(_ sender: Any) {
+        if let account = Auth.auth().currentUser {
+            account.delete { error in
+                if let error = error {
+                    self.showAlert(title: "Error", message: error.localizedDescription)
+                } else {
+                    self.showAlert(title: "Success", message: "Account delete succesfull")
+                }
+            }
+        }
+    }
+    
+    @objc func goToChangePassword(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let changePassword = storyboard.instantiateViewController(withIdentifier: "ChangePasswordViewController")
+        navigationController?.pushViewController(changePassword, animated: true)
+    }
+    
+
 }
 extension ManageAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     

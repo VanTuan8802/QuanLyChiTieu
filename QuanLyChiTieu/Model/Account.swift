@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Account{
+struct Account :Codable{
     var name : String
     var image : String
 }

@@ -7,6 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+import FirebaseDatabase
+import Foundation
 
 class RegisterViewController: UIViewController {
     
@@ -21,15 +24,31 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
-    
+   
     var account: ((String, String) -> Void)?
-    
+    let databaseRef = Database.database().reference()
     var showPassword: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUI()
+    }
+
+    func setUI(){
+        nameValidate.isHidden = true
+        emailValidate.isHidden = true
+        passwordValidate.isHidden = true
+        confirmPasswordValidate.isHidden = true
+        
+        passwordTxt.isSecureTextEntry = true
+        confirmPasswordTxt.isSecureTextEntry = true
+        
+        setUITextField(textField: nameTxt)
+        setUITextField(textField: emailTxt)
+        setUITextField(textField: passwordTxt)
+        setUITextField(textField: confirmPasswordTxt)
+        
+        setUIButton(button: registerBtn)
     }
     
     @IBAction func registerAction(_ sender: Any) {
@@ -50,34 +69,31 @@ class RegisterViewController: UIViewController {
                         self.present(alert, animated: true, completion: nil)
                     }else{
                         let alert = UIAlertController(title: "", message:"Go to Email to verify link" , preferredStyle: .alert)
-
+                        
                         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [self] (action: UIAlertAction!) in
-                            
-                            if let accountdata = account,
-                               let email = emailTxt.text,
-                               let password = passwordTxt.text{
-                                    accountdata(email,password)
-                            }
                             navigationController?.popViewController(animated: true)
+                            let email = emailTxt.text!
+                            let password = passwordTxt.text!
+                            account?(email,password)
+                            
+                            var accountUser = Account(name: nameTxt.text!, image: Constant.Key.imageNil)
+                            
+                            if let currentUser = Auth.auth().currentUser?.uid{
+                                databaseRef.child(Constant.Key.account).child(currentUser).setValue(accountUser.dictionary)
+                            }
                         }))
                         
                         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-                            print("Handle Cancel Logic here")
                         }))
                         self.present(alert, animated: true, completion: nil)
                     }
                 })
-                
             }
         }
     }
+    
     @IBAction func loginAction(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let login = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-        let nav = UINavigationController(rootViewController: login)
-        nav.setNavigationBarHidden(true, animated: true)
-        (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController = nav
-        (UIApplication.shared.delegate as? AppDelegate)?.window?.makeKeyAndVisible()
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func editName(_ sender: Any) {
@@ -119,29 +135,5 @@ class RegisterViewController: UIViewController {
         confirmPasswordValidate.isHidden = false
         confirmPasswordValidate.text = checkPassword(password: confirmPasswordTxt.text!)
         confirmPasswordTxt.layer.cornerRadius = 15
-    }
-    
-    
-    func setUI(){
-        nameValidate.isHidden = true
-        emailValidate.isHidden = true
-        passwordValidate.isHidden = true
-        confirmPasswordValidate.isHidden = true
-        
-        passwordTxt.isSecureTextEntry = true
-        confirmPasswordTxt.isSecureTextEntry = true
-        
-        setUITextField(textField: nameTxt)
-        setUITextField(textField: emailTxt)
-        setUITextField(textField: passwordTxt)
-        setUITextField(textField: confirmPasswordTxt)
-        
-        nameValidate.isHidden = true
-        emailValidate.isHidden = true
-        passwordValidate.isHidden = true
-        confirmPasswordValidate.isHidden = true
-        
-        setUIButton(button: registerBtn)
-        
     }
 }

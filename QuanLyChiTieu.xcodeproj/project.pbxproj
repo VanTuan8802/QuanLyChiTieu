@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0E5B29302AA214CF004443B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B292F2AA214CF004443B8 /* GoogleService-Info.plist */; };
 		0E5B29382AB09702004443B8 /* setUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B29372AB09702004443B8 /* setUI.swift */; };
+		0E5B293B2AB1D632004443B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B293A2AB1D632004443B8 /* Constants.swift */; };
+		0E5B29432AB1DAEB004443B8 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B29422AB1DAEB004443B8 /* Family.swift */; };
+		0E5B29452AB2BC38004443B8 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B29442AB2BC38004443B8 /* NSObject.swift */; };
 		0E645FD22A98D3BF00BF39A0 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E645FD12A98D3BF00BF39A0 /* LoadData.swift */; };
 		0E8AD9E72A95E684007CB291 /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */; };
 		0E8AD9E82A95E684007CB291 /* SpendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */; };
@@ -63,6 +66,9 @@
 /* Begin PBXFileReference section */
 		0E5B292F2AA214CF004443B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E5B29372AB09702004443B8 /* setUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setUI.swift; sourceTree = "<group>"; };
+		0E5B293A2AB1D632004443B8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0E5B29422AB1DAEB004443B8 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
+		0E5B29442AB2BC38004443B8 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
 		0E645FD12A98D3BF00BF39A0 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
 		0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
 		0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingTableViewCell.xib; sourceTree = "<group>"; };
@@ -128,11 +134,20 @@
 			name = FinanceCell;
 			sourceTree = "<group>";
 		};
+		0E5B29392AB1D624004443B8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B293A2AB1D632004443B8 /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		0E645FD02A98D3A100BF39A0 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
 				0E645FD12A98D3BF00BF39A0 /* LoadData.swift */,
 				0E5B29372AB09702004443B8 /* setUI.swift */,
+				0E5B29442AB2BC38004443B8 /* NSObject.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -167,6 +182,7 @@
 		0E937FE52A812CD90015DA19 /* QuanLyChiTieu */ = {
 			isa = PBXGroup;
 			children = (
+				0E5B29392AB1D624004443B8 /* Common */,
 				0E645FD02A98D3A100BF39A0 /* Extention */,
 				0E9380102A81C0D60015DA19 /* Model */,
 				0E937FFC2A812FDD0015DA19 /* Screen */,
@@ -286,6 +302,7 @@
 				0E93804D2A88ACF60015DA19 /* Account.swift */,
 				0E9380672A8CE8AA0015DA19 /* Income.swift */,
 				0E9380692A8CFA8E0015DA19 /* Spending.swift */,
+				0E5B29422AB1DAEB004443B8 /* Family.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -456,10 +473,12 @@
 				0E9380552A8CCF050015DA19 /* IncomeTableViewCell.swift in Sources */,
 				0E5B29382AB09702004443B8 /* setUI.swift in Sources */,
 				0E9380312A8283DC0015DA19 /* AccountViewController.swift in Sources */,
+				0E5B29432AB1DAEB004443B8 /* Family.swift in Sources */,
 				0E9380382A8383E60015DA19 /* ManageAccountViewController.swift in Sources */,
 				0E93804E2A88ACF60015DA19 /* Account.swift in Sources */,
 				0E93806A2A8CFA8E0015DA19 /* Spending.swift in Sources */,
 				0E93800D2A81C0B60015DA19 /* LoginViewController.swift in Sources */,
+				0E5B29452AB2BC38004443B8 /* NSObject.swift in Sources */,
 				0E93805D2A8CD0B50015DA19 /* FinanceInfoTableViewCell.swift in Sources */,
 				0E93803A2A8383F00015DA19 /* SettingViewController.swift in Sources */,
 				0E9380012A8130D20015DA19 /* TutorialCollectionViewCell.swift in Sources */,
@@ -477,6 +496,7 @@
 				0E93802F2A8283D00015DA19 /* SpendingViewController.swift in Sources */,
 				0E9380172A823D7D0015DA19 /* AppNavigationController.swift in Sources */,
 				0E9380422A8398220015DA19 /* FinanceViewController.swift in Sources */,
+				0E5B293B2AB1D632004443B8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

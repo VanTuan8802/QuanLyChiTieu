@@ -7,114 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "43E87A5E-48DE-4279-94A6-E45F3D0ECC5F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuanLyChiTieu/Screen/Login/LoginViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "loginAppleAction(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "43E87A5E-48DE-4279-94A6-E45F3D0ECC5F - 217f93c711c01051"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuanLyChiTieu.LoginViewController.loginAppleAction(Any) -&gt; ()"
-                  moduleName = "QuanLyChiTieu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nguyentuan/Documents/Techmaster/QuanLyChiTieu/QuanLyChiTieu/Screen/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "43E87A5E-48DE-4279-94A6-E45F3D0ECC5F - 217f93c711c01013"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuanLyChiTieu.LoginViewController.loginAppleAction(Any) -&gt; ()"
-                  moduleName = "QuanLyChiTieu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nguyentuan/Documents/Techmaster/QuanLyChiTieu/QuanLyChiTieu/Screen/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "43E87A5E-48DE-4279-94A6-E45F3D0ECC5F - 217f93c711c0111b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuanLyChiTieu.LoginViewController.loginAppleAction(Any) -&gt; ()"
-                  moduleName = "QuanLyChiTieu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nguyentuan/Documents/Techmaster/QuanLyChiTieu/QuanLyChiTieu/Screen/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "43E87A5E-48DE-4279-94A6-E45F3D0ECC5F - 217f93c711c01159"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuanLyChiTieu.LoginViewController.loginAppleAction(Any) -&gt; ()"
-                  moduleName = "QuanLyChiTieu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nguyentuan/Documents/Techmaster/QuanLyChiTieu/QuanLyChiTieu/Screen/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "43E87A5E-48DE-4279-94A6-E45F3D0ECC5F - 217f93c711c010dd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuanLyChiTieu.LoginViewController.loginAppleAction(Any) -&gt; ()"
-                  moduleName = "QuanLyChiTieu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nguyentuan/Documents/Techmaster/QuanLyChiTieu/QuanLyChiTieu/Screen/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "43E87A5E-48DE-4279-94A6-E45F3D0ECC5F - 217f93c711c01070"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuanLyChiTieu.LoginViewController.loginAppleAction(Any) -&gt; ()"
-                  moduleName = "QuanLyChiTieu"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nguyentuan/Documents/Techmaster/QuanLyChiTieu/QuanLyChiTieu/Screen/Login/LoginViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "99AC191A-DA0F-4510-BC3E-3DDE933E0B43"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -570,8 +462,8 @@
             filePath = "QuanLyChiTieu/Screen/IncomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,8 +478,8 @@
             filePath = "QuanLyChiTieu/Screen/FinanceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

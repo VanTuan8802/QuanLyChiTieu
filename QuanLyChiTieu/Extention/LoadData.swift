@@ -85,11 +85,10 @@ extension UIViewController{
                 }
                 
                 if let spendingData = snapshot.value as? [String: [String: Any]] {
-                    print(spendingData)
                     for (spendingId, data) in spendingData {
                         if let month = data["month"] as? String,
                            let name = data["name"] as? String,
-                           let lever = data["level"] as? Float,
+                           let lever = data["lever"] as? Float,
                            let sum = data["sum"] as? Float {
                             spendings.append(Spending(id: spendingId, name: name, month: month, sum: sum
                                                       , lever: lever,list: []))
@@ -98,8 +97,6 @@ extension UIViewController{
                         }
                     }
                 }
-                print("as")
-                print(spendings.count)
                 completion(spendings,sumValue)
             }
         }else{
@@ -133,31 +130,27 @@ extension UIViewController{
         }
     }
     
-    func findDataFinance(type: String, id : String, name: String, completion: @escaping([FinanceInfo],Float)->Void){
-        var finances : [FinanceInfo] = []
-        var sumValue : Float = 0.0
+    func getDataAccount(completion: @escaping (String, String) -> Void) {
+        var name: String = ""
+        var image: String = ""
         let databaseRef = Database.database().reference()
-        
-        if let currenUser = Auth.auth().currentUser?.uid{
-            let query = databaseRef.child(type).child(currenUser).child(id).child("list").queryOrdered(byChild: "name").queryEqual(toValue: name)
-            
-            query.observeSingleEvent(of: .value) { snapshot in
-                if let financeDatas = snapshot.value as? [String: [String: Any]] {
-                    print(financeDatas)
-                    for (id, data) in financeDatas {
-                        if let name = data["name"] as? String,
-                           let date = data["date"] as? String,
-                           let value = data["value"] as? Float{
-                            print(name)
-                            finances.append(FinanceInfo(id:id,name: name, date: date, value: value))
-                            sumValue += value
-                        }
-                    }
+
+        if let currentUser = Auth.auth().currentUser?.uid {
+            let query = databaseRef.child(Constant.Key.account).child(currentUser)
+
+            query.observeSingleEvent(of: .value) { snapshot  in
+                if let accountData = snapshot.value as? [String: Any] {
+                    name = accountData["name"] as? String ?? ""
+                    image = accountData["image"] as? String ?? ""
+
+                    completion(name, image)
+                } else {
+                    completion("", "")
                 }
-                completion(finances,sumValue)
             }
-        }else{
-            completion([],0)
+        } else {
+            completion("", "")
         }
     }
+
 }

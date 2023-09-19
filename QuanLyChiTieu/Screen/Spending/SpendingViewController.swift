@@ -20,21 +20,37 @@ class SpendingViewController: UIViewController{
     var month: String  = getNowMonth()
     var lastmonth: String = getLastMonthYear()
     
-    var spendings : [Spending] = []
-    var sum : Float = 0;
+    private var spendings : [Spending] = []
+    private var sum : Float = 0;
     
     let databaseRef = Database.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
        loadDataSpending(month: month)
+        setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
     }
     
     private func setupTableView() {
         spendingTableView.delegate = self
         spendingTableView.dataSource = self
-        spendingTableView.register(UINib(nibName: "IncomeTableViewCell", bundle: nil), forCellReuseIdentifier: "IncomeTableViewCell")
+        spendingTableView.register(UINib(nibName: SpendingTableViewCell.id, bundle: nil), forCellReuseIdentifier: SpendingTableViewCell.id)
     }
     
     func loadDataSpending(month : String){
@@ -48,7 +64,7 @@ class SpendingViewController: UIViewController{
 
     func addData(spending : Spending ){
         if let currentUser = Auth.auth().currentUser?.uid{
-            databaseRef.child("spending").child(currentUser).child(spending.id).setValue(spending.dictionary)
+            databaseRef.child(Constant.Key.spending).child(currentUser).child(spending.id).setValue(spending.dictionary)
         }
     }
     
@@ -80,10 +96,22 @@ class SpendingViewController: UIViewController{
                 let name = alertController.textFields![0].text ?? ""
                 let level = Float(alertController.textFields![1].text ?? "" )
                 let month = UIViewController.getNowMonth()
-        
-                addData(spending: Spending(id: id, name: name,month: month, sum: 0, lever: level!,list: []))
-                loadDataSpending(month: month)
                 
+                var spendingExist = false
+                
+                for spending in spendings {
+                    if spending.name == name{
+                        spendingExist = true
+                        break
+                    }
+                }
+                
+                if spendingExist{
+                    self.showAlert(title: "Error", message: "Đã có khoản chi trong danh sách")
+                }else{
+                    addData(spending: Spending(id: id, name: name,month: month, sum: 0, lever: level!,list: []))
+                    loadDataSpending(month: month)
+                }
                })
             let cancelAction = UIAlertAction(title: "Cancel", style:.default, handler: {
                    (action : UIAlertAction!) -> Void in })
@@ -103,7 +131,7 @@ extension SpendingViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SpendingTableViewCell", for: indexPath) as! SpendingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SpendingTableViewCell.id, for: indexPath) as! SpendingTableViewCell
         let spending = spendings[indexPath.row]
         
         cell.bindData(spending: spending)

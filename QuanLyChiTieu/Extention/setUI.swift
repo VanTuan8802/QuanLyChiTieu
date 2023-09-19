@@ -66,24 +66,4 @@ extension UIViewController{
         image.layer.cornerRadius = 60
         image.layer.borderColor = UIColor.black.cgColor
     }
-    
-    func convertDateToString(date : Date) -> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateString = dateFormatter.string(from: date)
-        return dateString
-    }
-    
-    class func convertStringToDate(from dateString: String)->Int?{
-        let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            
-            if let date = dateFormatter.date(from: dateString) {
-                let calendar = Calendar.current
-                let month = calendar.component(.month, from: date)
-                return month
-            }
-            
-            return nil
-    }
 }

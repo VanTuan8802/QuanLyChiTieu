@@ -968,7 +968,7 @@
                                     <constraint firstAttribute="bottom" secondItem="LKd-Mw-3X6" secondAttribute="bottom" constant="20" id="lBb-j5-8iU"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="PIa-fQ-10d">
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="PIa-fQ-10d">
                                 <rect key="frame" x="0.0" y="110" width="393" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PkS-yL-gmc"/>
