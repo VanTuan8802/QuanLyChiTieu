@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController {
         setUI()
     }
 
-    func setUI(){
+    func setUI() {
         nameValidate.isHidden = true
         emailValidate.isHidden = true
         passwordValidate.isHidden = true
@@ -52,33 +52,33 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerAction(_ sender: Any) {
-        Auth.auth().createUser(withEmail: emailTxt.text!, password: passwordTxt.text!){authResult , error in
-            if(error != nil) {
-                let alert = UIAlertController(title: "Error", message:error?.localizedDescription ?? "Exception", preferredStyle: .alert)
+        Auth.auth().createUser(withEmail: emailTxt.text!, password: passwordTxt.text!) { authResult, error in
+            if error != nil {
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription ?? "Exception", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                    NSLog("The \"OK\" alert occured.")
+                    NSLog("The \"OK\" alert occurred.")
                 }))
                 self.present(alert, animated: true, completion: nil)
-            }else{
-                authResult?.user.sendEmailVerification(completion: { (error) in
-                    if (error != nil){
-                        let alert = UIAlertController(title: "Error", message:error?.localizedDescription ?? "Exception", preferredStyle: .alert)
+            } else {
+                authResult?.user.sendEmailVerification(completion: { error in
+                    if error != nil {
+                        let alert = UIAlertController(title: "Error", message: error?.localizedDescription ?? "Exception", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                            NSLog("The \"OK\" alert occured.")
+                            NSLog("The \"OK\" alert occurred.")
                         }))
                         self.present(alert, animated: true, completion: nil)
-                    }else{
-                        let alert = UIAlertController(title: "", message:"Go to Email to verify link" , preferredStyle: .alert)
+                    } else {
+                        let alert = UIAlertController(title: "", message: "Go to Email to verify link", preferredStyle: .alert)
                         
                         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [self] (action: UIAlertAction!) in
                             navigationController?.popViewController(animated: true)
                             let email = emailTxt.text!
                             let password = passwordTxt.text!
-                            account?(email,password)
+                            account?(email, password)
                             
                             var accountUser = Account(name: nameTxt.text!, image: Constant.Key.imageNil)
                             
-                            if let currentUser = Auth.auth().currentUser?.uid{
+                            if let currentUser = Auth.auth().currentUser?.uid {
                                 databaseRef.child(Constant.Key.account).child(currentUser).setValue(accountUser.dictionary)
                             }
                         }))
@@ -103,7 +103,7 @@ class RegisterViewController: UIViewController {
     @IBAction func showNameErrorValidate(_ sender: Any) {
         if nameTxt.text?.isEmpty == true {
             nameValidate.text = "Họ tên không được trống"
-        }else{
+        } else {
             nameValidate.isHidden = true
         }
     }

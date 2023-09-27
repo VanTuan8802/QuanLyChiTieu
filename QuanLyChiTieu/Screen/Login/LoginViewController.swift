@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class LoginViewController: UIViewController {
+    
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var emailValidate: UILabel!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -25,8 +26,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginAppleBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     
-    private var showPassword:Bool = false
-    var account: ((String,String)->Void)?
+    private var showPassword: Bool = false
+    var account: ((String, String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    func setUI(){
+    func setUI() {
         emailValidate.isHidden = true
         passwordValidate.isHidden = true
         passwordTxt.isSecureTextEntry = true
@@ -57,7 +58,7 @@ class LoginViewController: UIViewController {
     @IBAction func registerAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let registerVC = storyboard.instantiateViewController(withIdentifier: RegisterViewController.id) as! RegisterViewController
-            registerVC.account = {email,password in
+        registerVC.account = { email, password in
             self.emailTxt.text = email
             self.passwordTxt.text = password
         }
@@ -65,34 +66,37 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginGoogleAction(_ sender: Any) {
+        // Add Google login logic here
     }
     
     @IBAction func loginFacebookAction(_ sender: Any) {
+        // Add Facebook login logic here
     }
     
     @IBAction func loginAppleAction(_ sender: Any) {
+        // Add Apple login logic here
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        Auth.auth().signIn(withEmail: emailTxt.text!, password: passwordTxt.text!){ [self]authResult,error in
-            if(error != nil){
-                self.showAlert(title: "Error", message:error?.localizedDescription ?? "Exception")
-            }else{
-                authResult?.user.reload(completion: { (error) in
-                    if authResult?.user.isEmailVerified == true{
+        Auth.auth().signIn(withEmail: emailTxt.text!, password: passwordTxt.text!) { [self] authResult, error in
+            if error != nil {
+                self.showAlert(title: "Error", message: error?.localizedDescription ?? "Exception")
+            } else {
+                authResult?.user.reload(completion: { error in
+                    if authResult?.user.isEmailVerified == true {
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vc = storyboard.instantiateViewController(withIdentifier: TabbarViewController.id)
                         
                         let keyWindow = UIApplication.shared.connectedScenes
-                            .filter({$0.activationState == .foregroundActive})
-                            .compactMap({$0 as? UIWindowScene})
+                            .filter({ $0.activationState == .foregroundActive })
+                            .compactMap({ $0 as? UIWindowScene })
                             .first?.windows
-                            .filter({$0.isKeyWindow}).first
+                            .filter({ $0.isKeyWindow }).first
                         
                         keyWindow?.rootViewController = vc
                         UserDefaults.standard.set(true, forKey: "isLoggedIn")
                         UserDefaults.standard.set(self.emailTxt.text, forKey: "email")
-                    }else{
+                    } else {
                         self.showAlert(title: "Error", message: "Tài khoản chưa được xác thực")
                     }
                 })
@@ -103,10 +107,10 @@ class LoginViewController: UIViewController {
     @IBAction func showPassword(_ sender: Any) {
         showPassword = !showPassword
         
-        if showPassword{
+        if showPassword {
             passwordTxt.isSecureTextEntry = false
             hidePassword.setImage(UIImage(named: "visible"), for: .normal)
-        }else{
+        } else {
             passwordTxt.isSecureTextEntry = true
             hidePassword.setImage(UIImage(named: "hidden"), for: .normal)
         }
@@ -133,7 +137,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func rememberAction(_ sender: Any) {
-        
+        // Handle remember action
     }
     
     @IBAction func forgotPasswordAction(_ sender: Any) {
@@ -146,5 +150,3 @@ class LoginViewController: UIViewController {
         }
     }
 }
-
-

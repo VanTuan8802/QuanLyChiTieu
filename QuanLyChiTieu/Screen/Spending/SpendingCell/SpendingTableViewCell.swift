@@ -31,7 +31,7 @@ class SpendingTableViewCell: UITableViewCell {
     
     func bindData(spending : Spending){
         nameLb.text = spending.name
-        sumLb.text = "Tông thu nhập là :\( String(format:"%.2f", spending.sum))"
+        sumLb.text = "Tông chi tiêu là :\( String(format:"%.2f", spending.sum))"
         remainLb.text = "Số tiền còn lại \( String(format: "%.2f", spending.lever-spending.sum))"
     }
     

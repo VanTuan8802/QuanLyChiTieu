@@ -51,7 +51,7 @@ extension UIViewController{
         
         if let currentUser = Auth.auth().currentUser?.uid {
             let databaseRef = Database.database().reference()
-            let query = databaseRef.child("income").child(currentUser).queryOrdered(byChild: "month").queryEqual(toValue: month)
+            let query = databaseRef.child(Constant.Key.income).child(currentUser).queryOrdered(byChild: "month").queryEqual(toValue: month)
             
             query.observeSingleEvent(of: .value) { snapshot in
                 if let incomeData = snapshot.value as? [String: [String: Any]] {
@@ -90,9 +90,7 @@ extension UIViewController{
                            let name = data["name"] as? String,
                            let lever = data["lever"] as? Float,
                            let sum = data["sum"] as? Float {
-                            spendings.append(Spending(id: spendingId, name: name, month: month, sum: sum
-                                                      , lever: lever,list: []))
-                            
+                            spendings.append(Spending(id: spendingId, name: name, month: month, sum: sum, lever: lever,list: []))
                             sumValue += sum
                         }
                     }
@@ -134,15 +132,15 @@ extension UIViewController{
         var name: String = ""
         var image: String = ""
         let databaseRef = Database.database().reference()
-
+        
         if let currentUser = Auth.auth().currentUser?.uid {
             let query = databaseRef.child(Constant.Key.account).child(currentUser)
-
+            
             query.observeSingleEvent(of: .value) { snapshot  in
                 if let accountData = snapshot.value as? [String: Any] {
                     name = accountData["name"] as? String ?? ""
                     image = accountData["image"] as? String ?? ""
-
+                    
                     completion(name, image)
                 } else {
                     completion("", "")
@@ -152,5 +150,5 @@ extension UIViewController{
             completion("", "")
         }
     }
-
+    
 }

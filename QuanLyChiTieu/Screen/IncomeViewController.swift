@@ -9,7 +9,6 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
-import Foundation
 
 class IncomeViewController: UIViewController {
     
@@ -18,12 +17,12 @@ class IncomeViewController: UIViewController {
     @IBOutlet weak var incomeTableView: UITableView!
     @IBOutlet weak var monthSegment: UISegmentedControl!
     
-    private var incomes : [Income] = []
+    private var incomes: [Income] = []
     let databaseRef = Database.database().reference()
-    private var sum : Float = 0;
+    private var sum: Float = 0
     
-    var month: String  = getNowMonth()
-    var lastmonth: String = getLastMonthYear()
+    var month: String = getNowMonth()
+    var lastMonth: String = getLastMonthYear()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,29 +31,13 @@ class IncomeViewController: UIViewController {
         loadData(month: month)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
     private func setupTableView() {
         incomeTableView.delegate = self
         incomeTableView.dataSource = self
         incomeTableView.register(UINib(nibName: IncomeTableViewCell.id, bundle: nil), forCellReuseIdentifier: IncomeTableViewCell.id)
     }
     
-    func loadData(month : String){
+    func loadData(month: String) {
         getDataIncome(month: month) { incomes, sumValue in
             self.incomes = incomes
             self.incomeTableView.reloadData()
@@ -63,16 +46,16 @@ class IncomeViewController: UIViewController {
         }
     }
 
-    func addData(income : Income ){
-        if let currentUser = Auth.auth().currentUser?.uid{
+    func addData(income: Income) {
+        if let currentUser = Auth.auth().currentUser?.uid {
             databaseRef.child(Constant.Key.income).child(currentUser).child(income.id).setValue(income.dictionary)
         }
     }
     
     @IBAction func monthSegmentAction(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex{
+        switch sender.selectedSegmentIndex {
         case 0:
-            loadData(month: lastmonth)
+            loadData(month: lastMonth)
             addBtn.isHidden = true
         default:
             loadData(month: month)
@@ -81,14 +64,15 @@ class IncomeViewController: UIViewController {
     }
     
     @IBAction func addAction(_ sender: Any) {
-        let alertController = UIAlertController(title: "Thêm khoản thu nhập", message: "", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController(title: "Thêm khoản thu nhập", message: "", preferredStyle: .alert)
         
-        alertController.addTextField { (textField : UITextField!) -> Void in
+        alertController.addTextField { textField in
             textField.placeholder = "Nhập tên thu nhập"
         }
-        let okAction = UIAlertAction(title: "OK", style:.default, handler: { [self] alert -> Void in
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { [self] _ in
             let id = UUID().uuidString
-            let name = alertController.textFields![0].text ?? ""
+            let name = alertController.textFields?[0].text ?? ""
             let month = UIViewController.getNowMonth()
             
             var incomeExists = false
@@ -106,19 +90,18 @@ class IncomeViewController: UIViewController {
                 addData(income: Income(id: id, name: name, month: month, sum: 0, list: []))
                 loadData(month: month)
             }
-        })
+        }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style:.default, handler: {
-            (action : UIAlertAction!) -> Void in })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
-extension IncomeViewController : UITableViewDataSource{
+extension IncomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return incomes.count
     }

@@ -1,5 +1,4 @@
-//
-//  IncomeInfoViewController.swift
+//  FinanceViewController.swift
 //  QuanLyChiTieu
 //
 //  Created by Nguyễn Tuấn on 09/08/2023.
@@ -10,7 +9,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class FinanceViewController: UIViewController{
+class FinanceViewController: UIViewController {
     
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var backBtn: UIButton!
@@ -28,35 +27,18 @@ class FinanceViewController: UIViewController{
     }
     
     var titleLb: String!
+    var month: String!
+    var type: String!
+    var id: String!
     
-    var month : String!
-    var type : String!
-    var id :String!
+    var sum: Float? = 0.0
     
-    var sum : Float? = 0.0
-
     override func viewDidLoad() {
         super.viewDidLoad()
         header.text = titleLb
         setupTableView()
         loadDataFinanceInfo()
         searchFinance = finances
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
     }
     
     private func setupTableView() {
@@ -74,21 +56,11 @@ class FinanceViewController: UIViewController{
         }
     }
     
-    private func addDataFinance(finance : FinanceInfo ){
-        if let currentUser = Auth.auth().currentUser?.uid{
+    private func addDataFinance(finance: FinanceInfo) {
+        if let currentUser = Auth.auth().currentUser?.uid {
             let databaseRef = Database.database().reference()
+
             databaseRef.child(Constant.Key.income).child(currentUser).child(id!).child("list").childByAutoId().setValue(finance.dictionary)
-            
-            let updatedValue = ["sum": self.sum]
-            databaseRef.child(Constant.Key.spending).child(currentUser)
-            
-            databaseRef.child("income").child(currentUser).child(id).updateChildValues(updatedValue as [AnyHashable : Any]) { (error, ref) in
-                if let error = error {
-                    print("Error updating value: \(error.localizedDescription)")
-                } else {
-                    print("Value updated successfully!")
-                }
-            }
         }
     }
 
@@ -117,22 +89,40 @@ class FinanceViewController: UIViewController{
             let name = alertController.textFields![0].text ?? ""
             let date = dateFormatter.string(from: currentDate)
             let value = Float(alertController.textFields![1].text ?? "")
-            addDataFinance(finance: FinanceInfo(id:id,name: name, date: date, value: value!))
+            
+            addDataFinance(finance: FinanceInfo(id: id, name: name, date: date, value: value!))
+            
+            self.sum! += value!
             loadDataFinanceInfo()
+            
+            let updatedValue = ["sum": self.sum!]
+            
+            print(updatedValue)
+            if let currentUser = Auth.auth().currentUser?.uid{
+                let databaseRef = Database.database().reference()
+                databaseRef.child(Constant.Key.income).child(currentUser).child(id).updateChildValues(updatedValue as [AnyHashable: Any]) { (error, ref) in
+                    if let error = error {
+                        self.showAlert(title: "Error", message: "Error updating value: \(error.localizedDescription)")
+                    } else {
+                        self.showAlert(title: "", message: "Value updated successfully!")
+                    }
+                }
+            }
+            
         })
+        
         let cancelAction = UIAlertAction(title: "Cancel", style:.default, handler: {
-            (action : UIAlertAction!) -> Void in })
+            (action : UIAlertAction!) -> Void in
+  	      })
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true, completion: nil)
-        
     }
-    
 }
 
-extension FinanceViewController : UITableViewDataSource{
+extension FinanceViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchFinance.count
     }
@@ -154,16 +144,7 @@ extension FinanceViewController: UITableViewDelegate {
     
 }
 
-extension FinanceViewController: UISearchBarDelegate{
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
-    }
-    
+extension FinanceViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             searchFinance = finances

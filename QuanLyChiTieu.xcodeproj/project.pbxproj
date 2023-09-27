@@ -10,8 +10,9 @@
 		0E5B29302AA214CF004443B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B292F2AA214CF004443B8 /* GoogleService-Info.plist */; };
 		0E5B29382AB09702004443B8 /* setUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B29372AB09702004443B8 /* setUI.swift */; };
 		0E5B293B2AB1D632004443B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B293A2AB1D632004443B8 /* Constants.swift */; };
-		0E5B29432AB1DAEB004443B8 /* Family.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B29422AB1DAEB004443B8 /* Family.swift */; };
 		0E5B29452AB2BC38004443B8 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B29442AB2BC38004443B8 /* NSObject.swift */; };
+		0E5B29ED2ABD2EAE004443B8 /* FinanceMonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5B29EB2ABD2EAE004443B8 /* FinanceMonthTableViewCell.swift */; };
+		0E5B29EE2ABD2EAE004443B8 /* FinanceMonthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E5B29EC2ABD2EAE004443B8 /* FinanceMonthTableViewCell.xib */; };
 		0E645FD22A98D3BF00BF39A0 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E645FD12A98D3BF00BF39A0 /* LoadData.swift */; };
 		0E8AD9E72A95E684007CB291 /* SpendingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */; };
 		0E8AD9E82A95E684007CB291 /* SpendingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */; };
@@ -67,8 +68,9 @@
 		0E5B292F2AA214CF004443B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E5B29372AB09702004443B8 /* setUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setUI.swift; sourceTree = "<group>"; };
 		0E5B293A2AB1D632004443B8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0E5B29422AB1DAEB004443B8 /* Family.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family.swift; sourceTree = "<group>"; };
 		0E5B29442AB2BC38004443B8 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		0E5B29EB2ABD2EAE004443B8 /* FinanceMonthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceMonthTableViewCell.swift; sourceTree = "<group>"; };
+		0E5B29EC2ABD2EAE004443B8 /* FinanceMonthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinanceMonthTableViewCell.xib; sourceTree = "<group>"; };
 		0E645FD12A98D3BF00BF39A0 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
 		0E8AD9E52A95E684007CB291 /* SpendingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingTableViewCell.swift; sourceTree = "<group>"; };
 		0E8AD9E62A95E684007CB291 /* SpendingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpendingTableViewCell.xib; sourceTree = "<group>"; };
@@ -142,6 +144,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		0E5B29EA2ABD2E69004443B8 /* FinanceMonth */ = {
+			isa = PBXGroup;
+			children = (
+				0E5B29EB2ABD2EAE004443B8 /* FinanceMonthTableViewCell.swift */,
+				0E5B29EC2ABD2EAE004443B8 /* FinanceMonthTableViewCell.xib */,
+			);
+			path = FinanceMonth;
+			sourceTree = "<group>";
+		};
 		0E645FD02A98D3A100BF39A0 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +215,6 @@
 				0E937FFD2A8130290015DA19 /* Tutorial */,
 				0E9380052A81BF230015DA19 /* Login */,
 				0E9380062A81BF420015DA19 /* Register */,
-				0E9380072A81BF520015DA19 /* Tabbar */,
 				0E9380082A81BF640015DA19 /* Home */,
 				0E9380092A81BF6E0015DA19 /* Income */,
 				0E93800A2A81BF7A0015DA19 /* Spending */,
@@ -261,6 +271,8 @@
 		0E9380082A81BF640015DA19 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0E9380072A81BF520015DA19 /* Tabbar */,
+				0E5B29EA2ABD2E69004443B8 /* FinanceMonth */,
 				0E93802A2A8283BB0015DA19 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -302,7 +314,6 @@
 				0E93804D2A88ACF60015DA19 /* Account.swift */,
 				0E9380672A8CE8AA0015DA19 /* Income.swift */,
 				0E9380692A8CFA8E0015DA19 /* Spending.swift */,
-				0E5B29422AB1DAEB004443B8 /* Family.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -408,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E937FF32A812CDA0015DA19 /* LaunchScreen.storyboard in Resources */,
+				0E5B29EE2ABD2EAE004443B8 /* FinanceMonthTableViewCell.xib in Resources */,
 				0E937FEE2A812CD90015DA19 /* Main.storyboard in Resources */,
 				0E5B29302AA214CF004443B8 /* GoogleService-Info.plist in Resources */,
 				0E9380022A8130D20015DA19 /* TutorialCollectionViewCell.xib in Resources */,
@@ -473,9 +485,9 @@
 				0E9380552A8CCF050015DA19 /* IncomeTableViewCell.swift in Sources */,
 				0E5B29382AB09702004443B8 /* setUI.swift in Sources */,
 				0E9380312A8283DC0015DA19 /* AccountViewController.swift in Sources */,
-				0E5B29432AB1DAEB004443B8 /* Family.swift in Sources */,
 				0E9380382A8383E60015DA19 /* ManageAccountViewController.swift in Sources */,
 				0E93804E2A88ACF60015DA19 /* Account.swift in Sources */,
+				0E5B29ED2ABD2EAE004443B8 /* FinanceMonthTableViewCell.swift in Sources */,
 				0E93806A2A8CFA8E0015DA19 /* Spending.swift in Sources */,
 				0E93800D2A81C0B60015DA19 /* LoginViewController.swift in Sources */,
 				0E5B29452AB2BC38004443B8 /* NSObject.swift in Sources */,
