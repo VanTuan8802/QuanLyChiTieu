@@ -60,19 +60,20 @@ class FinanceViewController: UIViewController {
         if let currentUser = Auth.auth().currentUser?.uid {
             let databaseRef = Database.database().reference()
 
-            databaseRef.child(Constant.Key.income).child(currentUser).child(id!).child("list").childByAutoId().setValue(finance.dictionary)
+            databaseRef.child(type).child(currentUser).child(id!).child("list").childByAutoId().setValue(finance.dictionary)
         }
     }
 
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addAction(_ sender: Any) {
         let alertController = UIAlertController(title: "Enter Details", message: nil, preferredStyle: .alert)
         
         alertController.addTextField { textField in
-            textField.placeholder = "Nhập tên khoản thu"
+            textField.placeholder = "Nhập tên khoản thu chi"
         }
         
         alertController.addTextField { textField in
@@ -85,22 +86,21 @@ class FinanceViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         
         let okAction = UIAlertAction(title: "OK", style:.default, handler: { [self] alert -> Void in
-            let id = UUID().uuidString
+            let idFinance = UUID().uuidString
             let name = alertController.textFields![0].text ?? ""
             let date = dateFormatter.string(from: currentDate)
             let value = Float(alertController.textFields![1].text ?? "")
             
-            addDataFinance(finance: FinanceInfo(id: id, name: name, date: date, value: value!))
+            addDataFinance(finance: FinanceInfo(id: idFinance, name: name, date: date, value: value!))
             
             self.sum! += value!
             loadDataFinanceInfo()
             
             let updatedValue = ["sum": self.sum!]
-            
-            print(updatedValue)
+
             if let currentUser = Auth.auth().currentUser?.uid{
                 let databaseRef = Database.database().reference()
-                databaseRef.child(Constant.Key.income).child(currentUser).child(id).updateChildValues(updatedValue as [AnyHashable: Any]) { (error, ref) in
+                databaseRef.child(type).child(currentUser).child(id).updateChildValues(updatedValue as [AnyHashable: Any]) { (error, ref) in
                     if let error = error {
                         self.showAlert(title: "Error", message: "Error updating value: \(error.localizedDescription)")
                     } else {

@@ -189,7 +189,38 @@ class ManageAccountViewController: UIViewController, UIGestureRecognizerDelegate
         navigationController?.pushViewController(changePassword, animated: true)
     }
     
-
+    @IBAction func endEditName(_ sender: Any) {
+        let alert = UIAlertController(title: "", message: "Bạn có chắc muốn thay đổi thông tin ", preferredStyle: .alert)
+        
+//        let okAction = UIAlertAction(title: "OK", style: .default){
+//
+//            if let currentUser = Auth.auth().currentUser?.uid{
+//                let databaseRef = Database.database().reference()
+//                let updatedValue = ["name": self.nameTxt.text!]
+//                databaseRef.child(type).child(currentUser).child(id).updateChildValues(updatedValue as [AnyHashable: Any])
+//            }
+//
+//        }
+        
+//        //let okAction = UIAlertAction(title: "OK", style: .default){ [self] _ in
+//
+//            if let currentUser = Auth.auth().currentUser?.uid{
+//                let databaseRef = Database.database().reference()
+//                let updatedValue = ["name": self.nameTxt.text!]
+// //               databaseRef.child(type).child(currentUser).child(id).updateChildValues(updatedValue as [AnyHashable: Any])
+//                databaseRef.child(type).child(currentUser).child(id).setValue(self.nameTxt.text, forKey: "name")
+//            }
+//
+////        /
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { _ in }
+//
+//        alert.addAction(okAction)
+//        alert.addAction(cancelAction)
+//
+//        present(alert, animated: true, completion: nil)
+        
+    }
+    
 }
 extension ManageAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     

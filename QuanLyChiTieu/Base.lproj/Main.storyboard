@@ -845,6 +845,7 @@
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nzW-bm-PdI">
                                 <rect key="frame" x="0.0" y="100" width="393" height="41"/>
+                                <color key="backgroundColor" red="0.4151613918" green="0.91160935160000001" blue="0.73094301500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="mKk-pf-Gxl"/>
                                 </constraints>
@@ -1295,6 +1296,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="editEnd:" destination="BN5-0U-OJs" eventType="editingDidBegin" id="r6A-wo-Fmx"/>
+                                                </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-US-nty">
                                                 <rect key="frame" x="170" y="0.0" width="30" height="24"/>
@@ -1306,6 +1310,7 @@
                                                 <state key="normal" image="pencil" catalog="system"/>
                                                 <connections>
                                                     <action selector="changeNameTxt:" destination="SLa-wE-L2h" eventType="touchUpInside" id="aB5-5K-SHY"/>
+                                                    <action selector="endEditName:" destination="SLa-wE-L2h" eventType="editingDidEnd" id="vGq-x5-HXE"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1424,6 +1429,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGG-aG-fJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BN5-0U-OJs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-801" y="1884"/>
         </scene>
