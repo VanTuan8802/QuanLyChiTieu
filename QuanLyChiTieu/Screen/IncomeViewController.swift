@@ -31,6 +31,10 @@ class IncomeViewController: UIViewController {
         loadData(month: month)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     private func setupTableView() {
         incomeTableView.delegate = self
         incomeTableView.dataSource = self
